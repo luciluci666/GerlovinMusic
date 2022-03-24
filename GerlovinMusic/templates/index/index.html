@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} GerlovinMusic {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="header_inner">
+            <img class="back" src="{% static 'images/notes.jpg' %}" alt="">
+            <div class="shade back"></div>
+        <div class="header_row">
+            <img src="{% static 'images/main.jpg' %}" alt="">
+            <div class="header_col">
+                <p class="white_text">Сергей Герловин</p>
+                <p class="white_plaifair">In pretium vitae quam felis, sed dolor, duis vel urna. Morbi semper platea risus id aliquet diam turpis mi, id. Nisl, at varius orci vel malesuada quis praesent phasellus tincidunt. Amet placerat vulputate leo et dapibus tellus id nunc faucibus. Augue tellus massa vitae urna.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="block">
+        <div class="black_playfair h">Песни</div>
+        <div class="row_block">
+            <div class="songs_index">
+                <audio class="song" controls >
+                    <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
+                </audio> 
+                <audio class="song" controls >
+                    <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
+                </audio> 
+                <audio class="song"  controls >
+                    <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
+                </audio> 
+            </div>
+            <div class="song_text_index">
+                <div class="square one">
+                    <div class="black_playfair"></div>
+                </div>
+                <div class="square two"></div>
+                <div class="square three"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

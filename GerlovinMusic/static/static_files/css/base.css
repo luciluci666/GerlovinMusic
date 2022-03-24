@@ -1,0 +1,236 @@
+body{
+    margin: 0;
+    font-family: Montserrat;
+    font-style: Regular;
+    background-color: #EBEBEB;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 70px;
+    background-color:rgba(17, 17, 17, 0.7);
+
+    color: #fff;
+}
+
+.header_logo{
+    position: relative;
+    width: 70px;
+    left: 0;
+    top: 30px;
+}
+
+.header_nav{
+    color: #fff;
+    position: relative;
+}
+
+.header_nav:hover{
+    color: rgba(232, 244, 255, 0.87);
+}
+
+.header_nav::after{
+    display: block;
+	position: absolute;
+    width: 100%;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	opacity: 0;
+	height: 1px; /*задаём ширину линии*/
+	background-color: rgba(232, 244, 255, 0.87);
+	content: "";
+    transition: opacity .2s linear;
+}
+
+.header_nav:hover::after{
+    opacity: 1;
+}
+
+.header_peace{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
+}
+.second{
+    width: 25%;
+}
+
+
+
+/*popup*/
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s linear;
+    z-index: 10;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup_area{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.popup_body{
+    
+    display: flex;
+    justify-content: right;
+    padding: 70px 10px;
+}
+
+.popup_content{
+    z-index: 10;
+    position: relative;
+    background-color:  #fff9f9;;
+    color: #000000;
+    max-width: 30vw;
+    padding: 30px 30px  30px 30px;
+    border-radius: 7px;
+}
+
+.popup_close{
+    color: #000000;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+}
+
+.popup_close:hover{
+    color: #363636b9;
+}
+
+.contact_form{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+/* index */
+
+.header_inner{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.shade{
+    background-color: #00000086;
+}
+.back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.header_row{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.header_row img{
+    width: 25%;
+    transition: 1s;
+}
+
+.header_row img:hover{
+    transform: scale(1.2); 
+}
+
+.header_col{
+    color: #fff;
+    width: 30%;
+}
+
+.pop_button{
+    justify-content: right;
+    background-color: #202020;
+    color: #fff;
+    border-radius: 6px;
+    width: 35%;
+    height: 2em;
+    transition: .3s;
+}
+
+.pop_button:hover{
+    background-color: #20202075;
+    color: rgba(219, 219, 219, 0.568);
+}
+
+
+/* second vlock (index) */
+
+.row_block{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.song_text_index{
+    position: relative;
+    width: 40%;
+}
+
+.square{
+    position: absolute;
+    width: 40%;
+    height: 80%
+}
+
+.one{
+    background: #DCDADA;
+    z-index: 1;
+    top: 50px;
+    right: 50px;
+}
+
+.two{
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    z-index: 2;
+    top: 100px;
+    right: 100px;
+}
+
+.three{
+    background: #C4C4C4;
+    z-index: 3;
+    top: 150px;
+    right: 150px;
+}
