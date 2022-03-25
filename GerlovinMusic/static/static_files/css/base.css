@@ -3,11 +3,15 @@ body{
     font-family: Montserrat;
     font-style: Regular;
     background-color: #EBEBEB;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 a{
     text-decoration: none;
 }
+
+
 
 .header{
     z-index: 10;
@@ -199,38 +203,178 @@ a{
 .row_block{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     
+}
+
+.song_desc_index{
+    width: 100%;
+    padding: 10px;
+    height: 54px;
+    align-items: center;
+}
+
+.song_name_index{
+    font-weight: 600;
+}
+
+.song_autor_index{
+    line-height: 30px;
+}
+
+.songs_index{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    border: 1px solid #000000;
+    position: relative;
+    background-color: #F1F3F4;
+}
+
+.back_white{
+    z-index: 2;
+    position: absolute;
+    background-color: #F1F3F4;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 83%;
+    
+}
+
+.desc_all_index{
+    padding: 20px;
+}
+
+.h_song_index{
+    position: absolute;
+    top: -70px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 48px;
+    text-decoration: underline;
+    padding-left: 10px;
+}
+
+.song{
+    padding: 10px;
+    width: 300px;
+    background-color: #F1F3F4;
 }
 
 .song_text_index{
     position: relative;
     width: 40%;
+    height: 300px;
 }
 
 .square{
     position: absolute;
-    width: 40%;
-    height: 80%
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .one{
     background: #DCDADA;
     z-index: 1;
-    top: 50px;
-    right: 50px;
+    top: 0px;
+    right: 0px;
 }
 
 .two{
     border: 1px solid #000000;
     box-sizing: border-box;
     z-index: 2;
-    top: 100px;
-    right: 100px;
+    top: 25px;
+    right: 25px;
 }
 
 .three{
     background: #C4C4C4;
     z-index: 3;
-    top: 150px;
-    right: 150px;
+    top: 50px;
+    right: 50px;
 }
+
+.razd{
+    display: block;
+    width: 700px;
+    height: 0px;
+    border: 1px solid #6F787D;
+    margin: 50px auto;
+    
+    
+}
+
+.h{
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 48px;
+    display: inline-block;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    
+}
+
+.koncert_index{
+    width: 30%;
+    height:100%;
+    
+
+}
+.concert_text_all_index{
+    margin: 30px;
+    position: relative;
+}
+
+.concert_text_index{
+    padding: 10px;
+}
+
+.border_top_index{
+    position: absolute;
+    border-top: 1px solid rgb(0, 0, 0);
+    width: 250px;
+    left: -10px;
+}
+
+.border_left_index{
+    position: absolute;
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 250px;
+    top: -10px;
+}
+
+.wrapper_index{
+    height: 80vh;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:3fr 3fr 3fr ;
+    
+}
+
+
+.wrapper_block_index{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.concert_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+

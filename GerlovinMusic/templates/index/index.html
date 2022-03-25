@@ -18,10 +18,26 @@
         </div>
     </div>
 
-    <div class="block">
-        <div class="black_playfair h">Песни</div>
+    <div class="block" style="margin: 30px; padding-bottom: 50px;">
         <div class="row_block">
             <div class="songs_index">
+                <div class="black_playfair h_song_index">Песни</div>
+                <div class="back_white">   
+                    <div class="desc_all_index">
+                        <div class="song_desc_index">
+                            <div class="song_name_index">НАЗВАНИЕ ПЕСНИ</div>
+                            <div class="song_autor_index">Сергей Герловин</div>
+                        </div>
+                        <div class="song_desc_index">
+                            <div class="song_name_index">НАЗВАНИЕ ПЕСНИ</div>
+                            <div class="song_autor_index">Сергей Герловин</div>
+                        </div>
+                        <div class="song_desc_index">
+                            <div class="song_name_index">НАЗВАНИЕ ПЕСНИ</div>
+                            <div class="song_autor_index">Сергей Герловин</div>
+                        </div>
+                    </div>
+                </div>
                 <audio class="song" controls >
                     <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
                 </audio> 
@@ -33,11 +49,68 @@
                 </audio> 
             </div>
             <div class="song_text_index">
-                <div class="square one">
-                    <div class="black_playfair"></div>
-                </div>
+                <div class="square one"></div>
                 <div class="square two"></div>
-                <div class="square three"></div>
+                <div class="square three"> <div class="black_playfair" style="padding: 15px">Felis nulla dictumst sed vel nisl, tellus hac consectetur vel. Urna, viverra mauris neque lorem diam sed bibendum convallis. Leo in lorem morbi diam, ante eget consectetur imperdiet feugiat. Quisque at erat odio ut. At sed bibendum volutpat aliquam vivamus integer. Phasellus vulputate blandit nec lacus tristique aenean. Viverra rhoncus purus arcu sed dignissim cras enim id pharetra. Nulla sed ut molestie vulputate non. Arcu aliquet elementum ipsum condimentum semper velit feugiat. Amet dictumst amet sagittis, amet id felis.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="razd"></div>
+
+    <div class="block">
+        <div class="row_block">
+            <div class="koncert_index">
+                <div class="black_playfair h" style="transform: translate(50%, -100%) ">Фотографии</div><br>
+                <div class="black_playfair h" style="transform: translate(50%, -100%) ">с концерта</div>
+                <div class="concert_text_all_index">
+                    <div class="border_top_index"></div>
+                    <div class="border_left_index"></div>
+                    <div class="concert_text_index">Nisi, ac massa tincidunt enim congue neque nascetur. Amet, etiam nibh est eros eu aliquam. Facilisis in odio fermentum, habitasse at mattis nam scelerisque. Sit consectetur ut ut tristique vulputate quis nisi, lacus. Nunc cras feugiat netus leo nisi, ornare. Id pretium purus in nulla sed pharetra. Ultrices aliquet urna pharetra tempus feugiat etiam consequat diam sit. Nunc porttitor libero lectus diam interdum amet dui. Euismod vel velit congue sed. Leo tristique tempus tellus dolor, at.</div>
+                </div>
+            </div>
+            <div class="wrapper_index">
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/photo.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+                <div class="wrapper_block_index"><img class="concert_img" src="{% static 'images/main.jpg' %}" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="razd" style="margin-bottom: 30px;"></div>
+
+    <div class="block">
+        <div class="" style="width: 100%; text-align: center; position: relative;">
+            <div class="black_playfair h" >Концерт</div>
+        </div>
+        <div class="row_block">
+            <div class="concert_video_index">
+                
+                <div style="font-size: 26px;">concert in saint-p</div>
+                <div><p>в кафе Африка в центре города</p></div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8inQXjgmJuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="concert_video_index">
+                <p style="font-size: 23px;">концерт в кафе "Африка"</p>
+                <p style="font-size: 23px;">дата: 30.07.2020</p>
+                <ol style="font-size: 22px;">
+                    <li>Вдохновение</li>
+                    <li>Трудный возраст</li>
+                    <li>Не могу быть один</li>
+                    <li>Оптимист</li>
+                </ol>
             </div>
         </div>
     </div>
