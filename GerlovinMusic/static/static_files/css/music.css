@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    position: relative;
+}
+
+
+.text {
+    font-family: Playfair Display;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    
+}
+h1{
+font-family: Playfair Display;
+font-size: 38px;
+font-style: normal;
+font-weight: 400;
+line-height: 19px;
+letter-spacing: 0em;
+text-decoration: underline;
+text-align: left;
+position: relative;
+top: 150px;
+left: 180px;
+
+}
+
+
+.frame {
+    position: relative;
+    border: 1px solid black;
+    top: 200px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  
+}
+
+
+.album {
+    border-radius: 25%;
+    width: 16%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+      
+}
+.pic{
+    border-radius: 25%;
+    width: 80%;
+}
+.name_alb{
+    /* margin: 0 auto; */
+    font-size: 15px;
+    margin-top: 7px;
+    font-weight: bold;
+    text-align: center;
+}
+.songs{
+    border: 1px solid black;
+    position: relative;
+    width: 80%;
+    height: 1063px;
+    margin: 0 auto;
+    top: 400px;
+    background: #EBEBEB;
+}

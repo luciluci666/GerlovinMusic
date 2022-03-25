@@ -1,3 +1,127 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %} GerlovinMusic {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/music.css' %}"> {% endblock %}
+
+{% block content %}
+
+<div class="main">
+    <p class="text">
+        Faucibus cras arcu quam aliquam luctus viverra leo. Mi tortor fermentum, donec sed. Duis tristique porttitor
+        pellentesque commodo pellentesque. Sed scelerisque vestibulum enim tincidunt porttitor praesent. Ornare mauris
+        cum lorem mauris sit sagittis. Pulvinar consectetur a, ipsum amet justo, elementum auctor quam. Eu suspendisse a
+        amet, lorem integer vitae condimentum. Aliquam ut sollicitudin purus suspendisse amet sodales. Odio dictumst
+        aliquam hac ornare. Tincidunt risus urna, sit nisi, sed. Suscipit nulla blandit aliquet interdum. Velit laoreet
+        faucibus sed mattis vitae nullam sagittis ut tincidunt. In tempus bibendum mauris, lectus nisl ultricies sed.
+        Feugiat egestas nunc ornare mauris sollicitudin lectus. Proin ullamcorper non vitae auctor aliquet. Ultricies
+        vestibulum condimentum sed sed eget et amet cursus sodales. Nec proin maecenas odio tincidunt. Congue lacinia
+        orci, elementum feugiat diam habitasse a, erat imperdiet. Ultrices aliquet orci vitae, adipiscing. Commodo
+        pellentesque elementum cras nam nunc, sed lectus sed. Neque lorem eget sed faucibus. Nec, mattis lacus nisi, sit
+        faucibus. Nulla dapibus erat suspendisse vel odio viverra. Eget faucibus odio morbi mattis eu eget lectus mi
+        morbi. Gravida pretium arcu in velit. Posuere eget pulvinar id arcu arcu, rhoncus aliquam. Sit eget lobortis
+        fringilla ullamcorper eget. In elit id a metus fringilla nibh. Massa libero felis pellentesque turpis. Erat
+        dolor non eget viverra malesuada. Enim, libero a, et ultrices eget. Ultricies vestibulum condimentum sed sed
+        eget et amet cursus sodales. Nec proin maecenas odio tincidunt. Congue lacinia orci, elementum feugiat diam
+        habitasse a, erat imperdiet. Ultrices aliquet orci vitae, adipiscing. Commodo pellentesque elementum cras nam
+        nunc, sed lectus sed. Neque lorem eget sed faucibus. Nec, mattis lacus nisi, sit faucibus. Nulla dapibus erat
+        suspendisse vel odio viverra. Eget faucibus odio morbi mattis eu eget lectus mi morbi. Gravida pretium arcu in
+        velit. Posuere eget pulvinar id arcu arcu, rhoncus aliquam. Sit eget lobortis fringilla ullamcorper eget. In
+        elit id a metus fringilla nibh. Massa libero felis pellentesque turpis. Erat dolor non eget viverra malesuada.
+        Enim, libero a, et ultrices eget.Faucibus cras arcu quam aliquam luctus viverra leo. Mi tortor fermentum, donec sed. Duis tristique porttitor
+        pellentesque commodo pellentesque. Sed scelerisque vestibulum enim tincidunt porttitor praesent. Ornare mauris
+        cum lorem mauris sit sagittis. Pulvinar consectetur a, ipsum amet justo, elementum auctor quam. Eu suspendisse a
+        amet, lorem integer vitae condimentum. Aliquam ut sollicitudin purus suspendisse amet sodales. Odio dictumst
+        aliquam hac ornare. Tincidunt risus urna, sit nisi, sed. Suscipit nulla blandit aliquet interdum. Velit laoreet
+        faucibus sed mattis vitae nullam sagittis ut tincidunt. In tempus bibendum mauris, lectus nisl ultricies sed.
+        Feugiat egestas nunc ornare mauris sollicitudin lectus. Proin ullamcorper non vitae auctor aliquet. Ultricies
+        vestibulum condimentum sed sed eget et amet cursus sodales. Nec proin maecenas odio tincidunt. Congue lacinia
+        orci, elementum feugiat diam habitasse a, erat imperdiet. Ultrices aliquet orci vitae, adipiscing. Commodo
+        pellentesque elementum cras nam nunc, sed lectus sed. Neque lorem eget sed faucibus. Nec, mattis lacus nisi, sit
+        faucibus. Nulla dapibus erat suspendisse vel odio viverra. Eget faucibus odio morbi mattis eu eget lectus mi
+        morbi. Gravida pretium arcu in velit. Posuere eget pulvinar id arcu arcu, rhoncus aliquam. Sit eget lobortis
+        fringilla ullamcorper eget. In elit id a metus fringilla nibh. Massa libero felis pellentesque turpis. Erat
+        dolor non eget viverra malesuada. Enim, libero a, et ultrices eget. Ultricies vestibulum condimentum sed sed
+        eget et amet cursus sodales. Nec proin maecenas odio tincidunt. Congue lacinia orci, elementum feugiat diam
+        habitasse a, erat imperdiet. Ultrices aliquet orci vitae, adipiscing. Commodo pellentesque elementum cras nam
+        nunc, sed lectus sed. Neque lorem eget sed faucibus. Nec, mattis lacus nisi, sit faucibus. Nulla dapibus erat
+        suspendisse vel odio viverra. Eget faucibus odio morbi mattis eu eget lectus mi morbi. Gravida pretium arcu in
+        velit. Posuere eget pulvinar id arcu arcu, rhoncus aliquam. Sit eget lobortis fringilla ullamcorper eget. In
+        elit id a metus fringilla nibh. Massa libero felis pellentesque turpis. Erat dolor non eget viverra malesuada.
+        Enim, libero a, et ultrices eget.
+    </p>
+    <h1>Песни</h1>
+    <div class="frame">
+        <div class="album">
+            <img class="pic"  src="{% static 'music_img/1.jpg' %}" alt="Альбом">
+            <div class="name_alb">Название альбома</div>
+        </div>
+
+        <div class="album">
+            <img class="pic"  src="{% static 'music_img/2.jpg' %}" alt="Альбом">
+            <div class="name_alb">Название альбома</div>
+        </div>
+        <div class="album">
+            <img class="pic"  src="{% static 'music_img/3.jpg' %}" alt="Альбом">
+            <div class="name_alb">Название альбома</div>
+        </div>
+        <div class="album">
+            <img class="pic"  src="{% static 'music_img/4.jpg' %}" alt="Альбом">
+            <div class="name_alb">Название альбома</div>
+        </div>
+        <div class="album">
+            <img class="pic"  src="{% static 'music_img/5.jpg' %}" alt="Альбом">
+            <div class="name_alb">Название альбома</div>
+        </div>
+        <div class="album">
+            <img class="pic"  src="{% static 'music_img/6.jpg' %}" alt="Альбом">
+            <div class="name_alb">Название альбома</div>
+        </div>
+
+        <!-- <img class="albom" src="{% static 'music_img/1.jpg' %}" alt="Альбом">
+        <img class="albom" src="{% static 'music_img/2.jpg' %}" alt="Альбом">
+        <img class="albom" src="{% static 'music_img/3.jpg' %}" alt="Альбом">
+        <img class="albom" src="{% static 'music_img/4.jpg' %}" alt="Альбом">
+        <img class="albom" src="{% static 'music_img/5.jpg' %}" alt="Альбом">
+        <img class="albom" src="{% static 'music_img/6.jpg' %}" alt="Альбом"> -->
+    </div>
+
+    <div class="songs">
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
