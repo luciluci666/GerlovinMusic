@@ -22,7 +22,7 @@ a{
     justify-content: space-between;
     width: 100vw;
     height: 70px;
-    background-color:rgba(17, 17, 17, 0.7);
+    background-color:rgba(36, 36, 36, 0.945);
 
     color: #fff;
 }
@@ -392,5 +392,10 @@ a{
 }
 
 .footer{
-    padding: 0 100px 50px 100px;
+    position: relative;
+    z-index: 2;
+    padding: 25px 20px 50px 20px;
+    background: radial-gradient(100% 100% at 50.04% 0%, #9E9D9D 0%, rgba(211, 211, 211, 0.56) 100%);
+    border-radius: 50px 50px 0 0 ;
+    margin: 50px 90px 0 90px;
 }
