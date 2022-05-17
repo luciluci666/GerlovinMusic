@@ -1,2 +1,4 @@
-GerlovinMusic/templates/music/old.html
-GerlovinMusic/templates/index/old.html
+node_modules/
+package-lock.json
+package.json
+prepros.config

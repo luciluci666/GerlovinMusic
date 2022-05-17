@@ -22,10 +22,11 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', include('index.urls')),
-    path('music/', include('music.urls')),
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
+
+    path('', include('index.urls')),
+    path('music/', include('music.urls')),
 ]
 
 
