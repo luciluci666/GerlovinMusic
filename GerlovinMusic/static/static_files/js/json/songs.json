@@ -1,16 +1,20 @@
 [
     {
-        "song1": {
-            "id": "1",
-            "name": "Ваще",
-            "path": "media/music/dj_sunf_vashche_zhest_-_vdoh_new_e_niya_ft_sergej_gerlovin__dj_sonic__dj_vitax_z2.fm.mp3"
-        }
+        "id": "1",
+        "name": "Лиза",
+        "path": "Music/Лиза.mp3",
+        "poster": ""
     },
     {
-        "song2": {
-            "id": "2",
-            "name": "Вдохновение",
-            "path": "music/melisa_-_i-m-alone.mp3"
-        }
+        "id": "2",
+        "name": "Jump",
+        "path": "Music/Jump.mp3",
+        "poster": "MusicPosters/P9020034_dxo.webp"
+    },
+    {
+        "id": "3",
+        "name": "Alone shuffling",
+        "path": "Music/Alone-shuffling.mp3",
+        "poster": "MusicPosters/paris.jfif"
     }
 ]

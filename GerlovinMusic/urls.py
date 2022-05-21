@@ -25,8 +25,7 @@ urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
 
-    path('', include('index.urls')),
-    path('music/', include('music.urls')),
+    path('', include('music.urls')),
 ]
 
 

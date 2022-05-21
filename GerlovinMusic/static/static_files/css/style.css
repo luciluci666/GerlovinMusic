@@ -1,4 +1,139 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+.modal-content {
+  background-color: #ffffff00;
+  border: none;
+}
+
+.message_form {
+  color: #C4C4C4;
+  background-color: #2E2E2E;
+  border-radius: 20px;
+}
+.message_form input,
+.message_form textarea {
+  background-color: #2E2E2E;
+  color: #C4C4C4;
+  border-radius: 12px;
+  width: 100%;
+  outline: none;
+  outline: 1px #fff;
+}
+.message_form input {
+  height: 25px;
+}
+.message_form .h5 {
+  color: #fff;
+}
+.message_form .btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  outline: none;
+}
+.message_form .message_inputs {
+  color: #C4C4C4;
+  background-color: #2E2E2E;
+  box-shadow: 5px 5px #2E2E2E !important;
+}
+.message_form .message_inputs:active, .message_form .message_inputs:hover, .message_form .message_inputs:focus {
+  background-color: #2E2E2E;
+  box-shadow: 5px 5px #2E2E2E !important;
+}
+
+#player {
+  z-index: 10;
+}
+
+#player_overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.player {
+  position: absolute;
+  top: 58px;
+  right: 5px;
+  background: radial-gradient(150% 150% at 50% 3.19%, #a7a7a7 0%, rgba(196, 196, 196, 0.884) 100%);
+  border-radius: 15px;
+  width: 250px;
+  align-items: center;
+  /* both range slider part */
+}
+.player .image_block {
+  display: flex;
+  align-items: center;
+  height: 230px;
+}
+.player img {
+  margin: 0 auto;
+  border-radius: 30px;
+  padding: 10px 0;
+  max-height: 250px;
+  min-width: 80%;
+  max-width: 85%;
+}
+.player div {
+  text-align: center;
+}
+.player .row {
+  position: relative;
+  width: 50%;
+}
+.player .row div {
+  position: absolute;
+  left: -40%;
+  bottom: 6%;
+  width: 40px;
+}
+.player .row button {
+  padding: 0;
+  border: none;
+  background-color: rgba(230, 230, 250, 0);
+  transition: all 0.2s linear;
+}
+.player .row button:hover {
+  opacity: 0.6;
+}
+.player .row button img {
+  width: 100%;
+  border-radius: 0;
+}
+.player .row #volume_btn {
+  width: 25px;
+}
+.player input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  outline: none;
+  height: 2px;
+}
+.player input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  background: #686767;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.player #volume {
+  position: absolute;
+  top: -25%;
+  left: -10%;
+  height: 3px;
+  width: 50px;
+  display: none;
+  opacity: 0;
+  transition: all 0.2s linear;
+  transform: rotate(-90deg);
+}
+.player #artist {
+  font-size: smaller;
+}
+.player #title {
+  font-weight: 600;
+}
+
 body {
   font-family: "Playfair Display", serif;
   background: #E5E5E5;
@@ -17,25 +152,34 @@ body {
   background: none;
   border: none;
 }
-.navbar-nav #player_btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
+@media only screen and (max-width: 576px) {
+  .navbar-nav .main_nav {
+    padding-top: 45px;
+  }
+}
+
+#player_btn {
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 75px;
   height: 100%;
+  background: none;
+  border: none;
 }
-.navbar-nav #player_btn img {
+@media only screen and (max-width: 576px) {
+  #player_btn {
+    position: absolute;
+    top: 7px;
+    right: 75px;
+  }
+}
+#player_btn img {
   height: 30px;
   position: absolute;
-  -webkit-transition: all 0.05s;
   transition: all 0.05s;
 }
-.navbar-nav #player_btn img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+#player_btn img:hover {
+  transform: scale(1.1);
 }
 
 .social {

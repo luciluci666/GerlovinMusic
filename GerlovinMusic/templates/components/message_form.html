@@ -1,0 +1,28 @@
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{% url 'message' %}" method="post" class="message_form container px-4 py-3">
+                {% csrf_token %}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                <div class="p-3">
+                    <p class="h5">Контакты:</p>
+                    <div class="">Телефон: +972-53-4359565</div>
+                    <div class="">E-mail: gerlovin.music@gmail.com</div>
+                </div>
+                <div class="h5">Здесь Вы можете оставить данные для связи:</div>
+                <div class="d-flex justify-content-between p-3">
+                    <div class="col-3">
+                        <div class="mb-3">Имя</div>
+                        <div class="mb-3">Контакты</div>
+                        <div>Обращение</div>
+                    </div>
+                    <div id="message_inputs" class="col-8">
+                        {{ form.as_p }}
+                        <div class="d-flex flex-row-reverse pt-3"><button type="submit"
+                                class="btn btn-secondary">Отправить</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
