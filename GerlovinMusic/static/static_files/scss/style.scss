@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import '_message_form';
 @import '_player';
+@import '_pages';
 
 body {
     font-family: 'Playfair Display', serif;
@@ -76,4 +77,8 @@ body {
     p {
         font-weight: 600;
     }
+}
+
+.play_song{
+    z-index: 10;
 }

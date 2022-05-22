@@ -41,6 +41,7 @@
 }
 
 #player {
+  display: none !important;
   z-index: 10;
 }
 
@@ -48,16 +49,18 @@
   position: fixed;
   height: 100vh;
   width: 100vw;
+  z-index: 9;
 }
 
 .player {
-  position: absolute;
+  position: fixed;
   top: 58px;
   right: 5px;
   background: radial-gradient(150% 150% at 50% 3.19%, #a7a7a7 0%, rgba(196, 196, 196, 0.884) 100%);
   border-radius: 15px;
   width: 250px;
   align-items: center;
+  z-index: 10;
   /* both range slider part */
 }
 .player .image_block {
@@ -134,6 +137,228 @@
   font-weight: 600;
 }
 
+.h_bottom_border {
+  display: inline-block;
+  border-bottom: 1px solid black;
+  font-size: 30px;
+  font-weight: 550;
+}
+
+.razd {
+  border-top: 1px solid #6F787D;
+  max-width: 350px;
+  margin: 50px auto;
+}
+
+.index_header .col-12 {
+  position: relative;
+  color: #fff;
+}
+.index_header .col-12 .notes {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  object-fit: cover;
+}
+.index_header .col-12 .p-5 {
+  align-items: center;
+}
+@media only screen and (max-width: 576px) {
+  .index_header .col-12 .p-5 {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .index_header .col-12 .p-5 div {
+    width: 100%;
+  }
+}
+.index_header .col-12 .p-5 .main_img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  margin: 50px 0;
+  transition: all 0.2s linear;
+}
+@media only screen and (max-width: 576px) {
+  .index_header .col-12 .p-5 .main_img {
+    padding: 0 30px;
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .index_header .col-12 .p-5 .main_img {
+    width: 80%;
+    margin-left: 50px;
+  }
+}
+.index_header .col-12 .p-5 .main_img:hover {
+  transform: scale(1.1);
+}
+.index_header .index_shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.56);
+  z-index: -1;
+}
+
+@media only screen and (max-width: 760px) {
+  .index-songs-list {
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin: 24px 0 !important;
+  }
+  .index-songs-list .index-songs_block {
+    margin-left: 30px;
+    width: 80%;
+  }
+  .index-songs-list .grey_blocks {
+    margin-top: 100px;
+    width: 100%;
+    margin-left: 15px;
+  }
+}
+
+.index-songs_block {
+  border: 1px black solid;
+  height: 215px;
+}
+.index-songs_block .index-songs button {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  bottom: 7px;
+  padding: 13px;
+  border: none;
+  background-color: rgba(230, 230, 250, 0);
+  transition: all 0.2s linear;
+}
+.index-songs_block .index-songs button:hover {
+  opacity: 0.6;
+}
+.index-songs_block .index-songs button img {
+  width: 100%;
+  border-radius: 0;
+}
+.index-songs_block .index-songs .text-uppercase {
+  font-weight: bold;
+}
+
+.grey_blocks {
+  position: relative;
+}
+@media only screen and (min-width: 770px) {
+  .grey_blocks {
+    left: -50px;
+  }
+}
+.grey_blocks div {
+  height: 100%;
+  width: 100%;
+}
+.grey_blocks .first {
+  background: #C4C4C4;
+  z-index: 0;
+  padding: 15px;
+}
+.grey_blocks .second {
+  position: absolute;
+  top: -25px;
+  right: -25px;
+  border: 1px solid black;
+  z-index: -1;
+}
+.grey_blocks .third {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  background: #DCDADA;
+  z-index: -2;
+}
+
+.index_concert_border_text {
+  border-left: 1px solid black;
+  padding-left: 15px;
+  padding-top: 30px;
+}
+
+.index_concert_border {
+  position: relative;
+  top: 15px;
+  left: -15px;
+  border-bottom: 1px solid black;
+  margin-top: 10px;
+}
+
+.concert_img_grid img {
+  width: 105%;
+  border-radius: 5px;
+}
+
+.index_concert_text {
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
+  align-items: center;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .index_concert_block {
+    flex-direction: column;
+  }
+  .index_concert_block .index_concert_text {
+    position: static;
+    margin: 20px 0;
+  }
+  .index_concert_block .concert_img_grid .row {
+    justify-content: center !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .index_concert_block .concert_img_grid img {
+    width: 120%;
+  }
+  .index_concert_block .concert_img_grid .row {
+    margin: 10px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .index_concert_release_block iframe {
+    height: 270px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .index_concert_release_block iframe {
+    height: 150px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .index_concert_release_block {
+    flex-direction: column;
+  }
+  .index_concert_release_block div, .index_concert_release_block iframe {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .index_concert_release_block iframe {
+    height: 237px !important;
+  }
+}
+@media only screen and (max-width: 560px) {
+  .index_concert_release_block iframe {
+    height: 200px !important;
+  }
+}
+
 body {
   font-family: "Playfair Display", serif;
   background: #E5E5E5;
@@ -199,4 +424,8 @@ body {
 }
 .footer p {
   font-weight: 600;
+}
+
+.play_song {
+  z-index: 10;
 }

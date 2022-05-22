@@ -1,19 +1,22 @@
 #player {
+    display: none !important;
     z-index: 10;
 }
 #player_overlay{
     position: fixed;
     height: 100vh;
     width: 100vw;
+    z-index: 9;
 }
 .player {
-    position: absolute;
+    position: fixed;
     top: 58px;
     right: 5px;
     background: radial-gradient(150% 150% at 50% 3.19%, #a7a7a7 0%, rgba(196, 196, 196, 0.884) 100%);
     border-radius: 15px;
     width: 250px;
     align-items: center;
+    z-index: 10;
 
     .image_block{
         display: flex;

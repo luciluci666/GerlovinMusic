@@ -17,6 +17,7 @@ let total = document.querySelector('#total');
 let artist = document.querySelector('#artist');
 let navbar_toggler = document.querySelector('.navbar-toggler')
 let default_image = track_image.src;
+let playing_song_img;
 
 let player_opened = true;
 let timer;
@@ -51,6 +52,7 @@ player_open();
 
 player_btn.onclick = player_open;
 
+
 function load_track(index_no) {
 	clearInterval(timer);
 	slider.value = 0;
@@ -69,6 +71,15 @@ function load_track(index_no) {
 
 	timer = setInterval(range_slider, 1000);
 
+}
+
+function check_playing_img_song() {
+	playing_song_img = document.getElementById('playing_song_img');
+	if (playing_song_img !== null) {
+		playing_song_img.src = String(playing_song_img.src).replace("pause", "play");
+		playing_song_img.removeAttribute('id');
+
+	}
 }
 
 load_track(index_no);
@@ -102,12 +113,22 @@ function playsong() {
 	track.play();
 	Playing_song = true;
 	play_img.src = String(play_img.src).replace("play", "pause");
+
+	check_playing_img_song();
+
+	now_playing = "song_" + (index_no + 1);
+	now_playing = document.querySelector('img[name=' + now_playing + ']');
+	now_playing.src = String(now_playing.src).replace("play", "pause");
+	now_playing.id = "playing_song_img";
+
+
 }
 
 function pausesong() {
 	track.pause();
 	Playing_song = false;
 	play_img.src = String(play_img.src).replace("pause", "play");
+	check_playing_img_song();
 }
 
 function next_song() {
@@ -201,6 +222,23 @@ function range_slider() {
 	}
 }
 
+function song_opener(elem) {
+	playing_song_img = document.getElementById('playing_song_img');
+	if (Playing_song == true && playing_song_img !== null && playing_song_img.getAttribute("name") == elem.getAttribute("name")) {
+
+		console.log('pause');
+		pausesong();
+	}
+	else {
+		index_no = Number(elem.getAttribute("name").replace("song_", "")) - 1;
+		if (player_opened == false) {
+			player_open();
+		}
+		load_track(index_no);
+		playsong();
+		console.log('play_next');
+	}
+}
 
 
 
