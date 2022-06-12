@@ -1,0 +1,38 @@
+.playlist{
+    color: #C4C4C4;
+    background-color: #2E2E2E;
+    border-radius: 20px;
+    color: #fff;
+
+    a{
+        text-decoration: none;
+        color: #fff;
+    }
+
+    img{
+        width: 100%;
+        border-radius: 15px;
+        max-height: 400px;
+    }
+    .h_bottom_border{
+        border-color: #fff;
+    }
+    .btn-close{
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    .playlist_songlist_title{
+        font-size: 24px;
+    }
+
+    .play_song{
+        padding: 10px;
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+}

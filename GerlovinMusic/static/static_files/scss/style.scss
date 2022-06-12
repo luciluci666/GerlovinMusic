@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import '_message_form';
 @import '_player';
-@import '_pages';
+@import '_index';
+@import '_music';
+@import '_playlist';
 
 body {
     font-family: 'Playfair Display', serif;
     background: #E5E5E5;
 }
 
+button{
+    border: none;
+    background: none;
+}
 
 .navbar-brand {
     width: 40px;

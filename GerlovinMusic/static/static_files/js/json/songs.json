@@ -16,5 +16,17 @@
         "name": "Alone shuffling",
         "path": "Music/Alone-shuffling.mp3",
         "poster": "MusicPosters/paris.jfif"
+    },
+    {
+        "id": "4",
+        "name": "AMG",
+        "path": "Music/Lida_-_AMG.mp3",
+        "poster": ""
+    },
+    {
+        "id": "5",
+        "name": "Дом Периньон",
+        "path": "Music/dom_perenion.mp3",
+        "poster": "MusicPosters/400x400cc.jpg"
     }
 ]

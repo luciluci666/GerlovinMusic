@@ -1,0 +1,54 @@
+{% load static %}
+{% load music_tags %}
+
+<div class="modal fade" id="Playlist_{{ playlist.id }}">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="container p-5 playlist">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                <div class="playlist_header row justify-content-around">
+                    <div class="col-lg-6 pb-3">
+                        {% if playlist.image_file %}
+                        <div><img src="{{ playlist.image_file.url }}" alt=""></div>
+                        {% else %}
+                        <div><img src="{% static 'media\PlaylistPosters\default.png' %}" alt=""></div>
+                        {% endif %}
+                    </div>
+                    <div class="col-lg-5 pb-3">
+                        <p class="h_bottom_border">
+                            {{ playlist.name }}
+                        </p>
+                        <p>
+                            Сергей Герловин
+                        </p>
+                        <p>
+                            Дата: {{ playlist.pub_date }}
+                        </p>
+                        <div class="">
+                            {{ playlist.desc|safe}}
+                        </div>
+                    </div>
+                </div>
+                <div class="h_bottom_border playlist_songlist_title">
+                    Песни
+                </div>
+
+                <div class=" my-3">
+                    {% get_playlist_songs playlist=playlist as playlist_songs%}
+                    {% for song in playlist_songs %}
+                        <div class="row">
+                            <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song col-2 col-lg-1"
+                            id="play"><img name="song_{{ song.id }}" src="{% static 'img/icons/play_white.png' %}" alt=""></button>
+                            <div class="col-9 d-flex align-items-center">
+                                <a href="">{{ song.name }}</a> - Сергей Герловин
+                            
+                            </div>
+                        </div>       
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

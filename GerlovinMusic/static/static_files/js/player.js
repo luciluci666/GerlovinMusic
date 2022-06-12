@@ -7,6 +7,7 @@ let next = document.querySelector('#next');
 let title = document.querySelector('#title');
 let recent_volume = document.querySelector('#volume');
 let volume_btn = document.querySelector('#volume_btn');
+let volume_img_page = document.querySelectorAll('.volume_img_page');
 let volume_img = document.querySelector('#volume_img');
 let slider = document.querySelector('#duration_slider');
 let show_duration = document.querySelector('#show_duration');
@@ -18,6 +19,7 @@ let artist = document.querySelector('#artist');
 let navbar_toggler = document.querySelector('.navbar-toggler')
 let default_image = track_image.src;
 let playing_song_img;
+let slider_position = 0.00001;
 
 let player_opened = true;
 let timer;
@@ -30,9 +32,14 @@ let Playing_song = false;
 let track = document.createElement('audio');
 let All_song = JSON.parse(localStorage.getItem('json'));
 
+let sliders = document.getElementsByClassName('duration_slider_page');
+
+
+
 function click_listner() {
 	player_open();
 }
+
 function player_open() {
 	if (player_opened == false) {
 		player.style = 'display:block !important;';
@@ -48,15 +55,35 @@ function player_open() {
 	}
 }
 
-player_open();
 
-player_btn.onclick = player_open;
+function fetchAudioFile(callaudio) {
+	var requestObj = new Request(callaudio.src, {
+		method: 'GET',
+		headers: {
+			'Accept-Ranges': '1000000000'
+		},
+		referrerPolicy: 'no-referrer'
+	});
+
+	fetch(requestObj).then(function (response) {
+		return response;
+	}).then(async function (outcome) {
+		const blob = await outcome.blob();
+		const url = window.URL.createObjectURL(blob);
+		callaudio.src = url;
+	});
+};
 
 
 function load_track(index_no) {
+
 	clearInterval(timer);
 	slider.value = 0;
+	Array.from(sliders).forEach(element => {
+		element.value = 0;
+	});
 	song = All_song[index_no];
+
 
 	track.src = song.path;
 	title.innerHTML = song.name;
@@ -67,29 +94,42 @@ function load_track(index_no) {
 		track_image.src = default_image;
 	}
 	artist.innerHTML = "Sergei Gerlovin";
+
+	fetchAudioFile(track);
+
 	track.load();
 
 	timer = setInterval(range_slider, 1000);
-
 }
 
 function check_playing_img_song() {
-	playing_song_img = document.getElementById('playing_song_img');
-	if (playing_song_img !== null) {
-		playing_song_img.src = String(playing_song_img.src).replace("pause", "play");
-		playing_song_img.removeAttribute('id');
+	playing_song_img = document.querySelectorAll('.playing_song_img');
+	active_items = document.querySelectorAll('.active_song_items');
 
+	if (playing_song_img !== null) {
+		Array.from(playing_song_img).forEach(element => {
+			element.src = String(element.src).replace("pause", "play");
+			element.classList.remove('playing_song_img');
+		})
+	
+	}
+
+	if (active_items !== null) {
+		active_items.forEach(element => {
+			element.classList.remove('active_song_items');
+		})
 	}
 }
-
-load_track(index_no);
 
 function mute_sound() {
 	if (track.volume == 0) {
 		recent_volume.value = 80;
 		volume_show.innerHTML = recent_volume.value;
 		track.volume = recent_volume.value / 100;
-		volume_img.src = String(volume_img.src).replace("silent", "sound");;
+		volume_img.src = String(volume_img.src).replace("silent", "sound");
+		volume_img_page.forEach(element => {
+			element.src = String(element.src).replace("silent", "sound");
+		});
 	}
 	else {
 		track.volume = 0;
@@ -97,31 +137,57 @@ function mute_sound() {
 		volume_show.innerHTML = 0;
 		recent_volume.setAttribute('value', '0')
 		volume_img.src = String(volume_img.src).replace("sound", "silent");
+		volume_img_page.forEach(element => {
+			element.src = String(element.src).replace("sound", "silent");
+		});
 	}
 }
 
 function justplay() {
 	if (Playing_song == false) {
 		playsong();
-
 	} else {
 		pausesong();
 	}
 }
 
 function playsong() {
-	track.play();
+	if (slider_position !== 0.00001){
+		track.currentTime = slider_position;
+		slider_position = 0.00001;
+	}
+	track.oncanplay = function () {
+		track.play();
+	}	
+
 	Playing_song = true;
 	play_img.src = String(play_img.src).replace("play", "pause");
-
 	check_playing_img_song();
-
 	now_playing = "song_" + (index_no + 1);
-	now_playing = document.querySelector('img[name=' + now_playing + ']');
-	now_playing.src = String(now_playing.src).replace("play", "pause");
-	now_playing.id = "playing_song_img";
+	slider_now_playing = "slider_song_" + (index_no + 1);
+	volume_now_playing = "volume_song_" + (index_no + 1);
+	now_playing = document.querySelectorAll('img[name=' + now_playing + ']');
 
-
+	playing_song_slider = document.querySelector('input[name=' + slider_now_playing + ']');
+	playing_song_volume = document.querySelector('button[name=' + volume_now_playing + ']');
+	try {
+		Array.from(now_playing).forEach(element => {
+			element.src = String(element.src).replace("play", "pause");
+			element.classList.add("playing_song_img");
+		}); 
+		now_playing.id = "playing_song_img";
+	}
+	catch {
+		pass
+	}
+	try {
+		playing_song_slider.classList.add('active_song_items');
+		playing_song_volume.classList.add('active_song_items');
+	}
+	catch {
+		//pass
+	}
+	track.play();
 }
 
 function pausesong() {
@@ -149,9 +215,8 @@ function previous_song() {
 		index_no -= 1;
 		load_track(index_no);
 		playsong();
-
 	} else {
-		index_no = All_song.length;
+		index_no = All_song.length - 1;
 		load_track(index_no);
 		playsong();
 	}
@@ -169,8 +234,8 @@ function opacity() {
 function volume_open() {
 	recent_volume.style["display"] = "block";
 	myInterval = setInterval(opacity, 1);
-
 }
+
 function volume_close() {
 	recent_volume.style["display"] = "none";
 	recent_volume.style["opacity"] = 0;
@@ -189,9 +254,12 @@ function volume_change() {
 	}
 }
 
-function change_duration() {
-	slider_position = track.duration * (slider.value / 100);
-	track.currentTime = slider_position;
+function change_duration(elem) {
+	slider_position = track.duration * (elem.value / 100);
+	if (Playing_song == true){
+		track.currentTime = slider_position;
+	}
+	
 }
 
 function autoplay_switch() {
@@ -204,29 +272,30 @@ function autoplay_switch() {
 
 function range_slider() {
 	let position = 0;
-
 	// update slider position
 	if (!isNaN(track.duration)) {
 		position = track.currentTime * (100 / track.duration);
-		slider.value = position;
-
+		if (Playing_song == true){
+			slider.value = position;
+		}
+		Array.from(sliders).forEach(element => {
+			element.value = position;
+		});
 	}
 	// function will run when the song is over
 	if (track.ended) {
 		play_img.src = String(play_img.src).replace("pause", "play");
 		if (autoplay == 1) {
-			index_no += 1;
-			load_track(index_no);
-			playsong();
+			next_song();
 		}
 	}
+	
+	
 }
 
 function song_opener(elem) {
-	playing_song_img = document.getElementById('playing_song_img');
-	if (Playing_song == true && playing_song_img !== null && playing_song_img.getAttribute("name") == elem.getAttribute("name")) {
-
-		console.log('pause');
+	playing_song_img = document.querySelectorAll('.playing_song_img');
+	if (Playing_song == true && playing_song_img !== null && playing_song_img[0].getAttribute("name") == elem.getAttribute("name")) {
 		pausesong();
 	}
 	else {
@@ -236,10 +305,13 @@ function song_opener(elem) {
 		}
 		load_track(index_no);
 		playsong();
-		console.log('play_next');
 	}
 }
 
 
+player_open();
 
+player_btn.onclick = player_open;
+
+load_track(index_no);
 

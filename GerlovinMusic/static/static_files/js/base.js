@@ -5,6 +5,24 @@ let navbar_brand = document.getElementsByClassName('navbar-toggler')[0];
 let player_btn_bool = false;
 
 
+
+function text_decor_height() {
+    let text_decoration = document.getElementsByClassName('text_background')[0].childNodes;
+    text_decoration.forEach(element => {
+        try {
+            element.style.height = document.getElementsByTagName('body')[0].scrollHeight + "px";
+        }
+        catch {
+            //pass
+        }
+    });
+}
+
+if (typeof document.getElementsByClassName('text_background')[0] !== "undefined") {
+    text_decor_height();
+    window.addEventListener('resize', text_decor_height);
+}
+
 function CheckSize() {
     if ($(window).width() > 576 && player_btn_bool == true) {
         player_btn_parent.appendChild(player_btn);

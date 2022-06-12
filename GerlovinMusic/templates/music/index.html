@@ -5,7 +5,96 @@
 
 {% block content %}
 
+{% include 'components/text_background.html' %}
+
+<style>
+    .playlists {
+        background-image: url('{% static "img/playlists_bg.jpg" %}') !important;
+        -moz-background-size: 100%;
+        -webkit-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%;
+
+    }
+</style>
+
+<div class="container py-5">
+    <div class="h_bottom_border my-5">Песни</div>
+
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            {% for num in pl_buttons %}
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="{{ num }}"></button>
+            {% endfor %}
+        </div>
+        <div class="carousel-inner playlists">
+            <div class="playlists_shade"></div>
+            {% for playlist in playlists %}
+            {% if playlist == playlists|first %}
+            <div class="carousel-item active">
+            {% else %}
+            <div class="carousel-item">
+            {% endif %}
+                <div class="music_playlist_item d-flex justify-content-around px-5 align-items-center">
+                    <div class="col-md-5">
+                        <button data-bs-toggle="modal" data-bs-target="#Playlist_{{ playlist.id }}">
+                            {% if playlist.image_file %}
+                            <div><img src="{{ playlist.image_file.url }}" alt=""></div>
+                            {% else %}
+                            <div><img src="{% static 'media\PlaylistPosters\default.png' %}" alt=""></div>
+                            {% endif %}
+                            <div class="d-flex align-items-center pla_name">
+                                <div class="pl_name">{{ playlist.name }}</div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                       {{ playlist.desc|safe }}
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        {% for playlist in playlists %}
+        {% include 'components/playlist.html' %}
+        {% endfor %}
+    </div>
 
 
+
+    <div class="song_list_music my-5">
+        {% for song in songs %}
+        <div class="row justify-content-around music_song_item px-3">
+            <div class="col-1 music_note_music "><img src="{% static 'img\icons\music_notes_second.png' %}"></div>
+            <div class="row col-lg-9 justify-content-around">
+                <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song col-2 mx-1"
+                    id="play"><img name="song_{{ song.id }}" src="{% static 'img/icons/play.png' %}" alt=""></button>
+                <div class="col-5">
+                    <div class="text-uppercase">{{ song.name }}</div>
+                    <div class="font-weight-bold">Sergei Gerlovin</div>
+                </div>
+                <div class="duration py-1 col-4 d-flex align-items-center">
+                    <input name="slider_song_{{ song.id }}" type="range" min="0" max="100" value="0"
+                        class="duration_slider_page" onchange="change_duration(this)">
+                </div>
+                <div class="col-1 d-flex align-items-center">
+                    <button onclick="mute_sound()" id="volume_btn" name="volume_song_{{ song.id }}"><img
+                            class="volume_img_page" src="{% static 'img/icons/sound.png' %}"
+                            style="width: 65%; padding-bottom: 4px;" alt=""></button>
+                </div>
+            </div>
+            <div class="col-1 music_note_music"><img src="{% static 'img\icons\music_notes_second.png' %}"></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
