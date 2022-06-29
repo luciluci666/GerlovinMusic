@@ -24,4 +24,11 @@ class Playlist(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-   
+class Verse(models.Model):
+    name = models.CharField('Название', max_length=100, null=True, blank=True)
+    desc = models.CharField('Описание', max_length=500, null=True, blank=True)
+    text = HTMLField('Текси', null=True, blank=True)
+    pub_date = models.DateField()
+
+    def __str__(self):
+        return f"{self.name}"

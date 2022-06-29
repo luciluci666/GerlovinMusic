@@ -123,6 +123,15 @@
     background-color: #EBEBEB;
     padding: 15px 0;
 
+    a{
+        text-decoration: none;
+        color: black;
+        transition: all .2s linear;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+
     .music_note_music {
         display: flex;
         justify-content: center;
@@ -285,4 +294,26 @@
     }
 
     @media only screen and (max-width: 560px) {}
+}
+
+.play_btn_style{
+    transition: all .2s linear;
+    &:hover{
+        opacity: 0.6;
+    }
+}
+
+.song_show{
+    display: block;
+    margin: 0 auto;
+    a{
+        transition: all .2s linear;
+        &:hover{
+            color: black;
+            opacity: 0.6;
+        }
+    }
+    .text-uppercase{
+        font-weight: 600;
+    }
 }

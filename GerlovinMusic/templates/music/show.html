@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} GerlovinMusic {% endblock %}
+
+{% block content %}
+
+<div class="song_show container py-5  ">
+    <div class="row py-5 justify-content-center">
+        <div class="col-12 col-md-7">
+            <div class="row">
+                {% if song.image_file %}
+                <div class="col-5"><img class="w-100" src="{{ song.image_file.url }}" alt=""></div>
+                {% else %}
+                <div class="col-5"><img class="w-100" src="{% static 'media\MusicPosters\default.png' %}" alt=""></div>
+                {% endif %}
+                <div class="col-7">
+                    <div class="h_bottom_border">{{ song.name }}</div>
+                    <div class="">Сергей Герловин</div>
+                    <div class="">Плэйлист: {{ playlist }}</div>
+                    <div class="">Дата: {{ song.pub_date }}</div>
+                </div>
+            </div>
+        </div>
+        {% if song.desc %}
+        <div class="col-12 col-md-5">{{song.desc}}</div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song col-1 mx-1" id="play"><img
+                class="play_btn_style" style="width: 35px;" name="song_{{ song.id }}"
+                src="{% static 'img/icons/play.png' %}" alt=""></button>
+        <div class="col-4">
+            <a href="{% url 'music.show' song.id %}" class="text-uppercase">{{ song.name }}</a>
+            <div class="font-weight-bold">Sergei Gerlovin</div>
+        </div>
+        <div class="duration py-1 col-5 d-flex align-items-center">
+            <input name="slider_song_{{ song.id }}" type="range" min="0" max="100" value="0"
+                class="duration_slider_page" onchange="change_duration(this)">
+        </div>
+    </div>
+    <div class="song_text my-5">
+        {{ song.text|safe}}
+    </div>
+</div>
+
+{% endblock %}

@@ -24,7 +24,7 @@ class index(MyPage):
     
 
 class music(MyPage):
-    def music_index(request):
+    def index(request):
         MyPage.songs_json(Music)
         songs = Music.objects.all().order_by("-id")
         playlists = Playlist.objects.all().order_by("-id")
@@ -39,4 +39,21 @@ class music(MyPage):
             
         return render(request,"music/index.html", {'form' : form, 'songs' : songs, 'playlists' : playlists, 'pl_buttons' : pl_buttons})
 
+    def show(request, id):
+        song = Music.objects.get(pk = id)
+        
+        playlist = Playlist.objects.filter(songs = id)[:1][0]
 
+
+        return render(request, "music/show.html", {'form' : form, 'song' : song, 'playlist' : playlist})
+
+
+
+class verse(MyPage):
+        def index(request):
+            verses = Verse.objects.all().order_by("-id")
+            return render(request,"verse/index.html", {'form' : form})
+
+        def show(request, id):
+
+            return render(request, "verse/show.html", {'form' : form})

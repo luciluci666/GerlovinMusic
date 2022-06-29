@@ -41,8 +41,7 @@
                             <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song col-2 col-lg-1"
                             id="play"><img name="song_{{ song.id }}" src="{% static 'img/icons/play_white.png' %}" alt=""></button>
                             <div class="col-9 d-flex align-items-center">
-                                <a href="">{{ song.name }}</a> - Сергей Герловин
-                            
+                                <a href="{% url 'music.show' song.id %}">{{ song.name }}</a> - Сергей Герловин
                             </div>
                         </div>       
                     {% endfor %}
