@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load music_tags %}
+
+{% block title %} GerlovinMusic {% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="h_bottom_border my-5">{{ concert.name }}</div>
+    <div class="row">
+        <div class="col-12 col-md-7"><img src="{{ concert.image_file.url }}" alt=""></div>
+        <div class="col-12 col-md-5">
+            <div class="">{{ concert.desc|safe }}</div>
+            <div class="">{{ concert.date_time }}</div>
+        </div>
+    </div>
+    <div class="razd"></div>
+    <div class="">Видео</div>
+    <div class="px-5">
+        <div class="index_concert_release_block row justify-content-around py-3">
+            <div class="col-lg-9 col-7">
+                <iframe width="80%" height="340" src="https://www.youtube.com/embed/{{ concert.video }}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="col-lg-3 col-5">
+                <div class="index_concert_releaze">
+                    <p>Песни: </p>
+                    {% get_concert_songs concert=concert as concert_songs %}
+                    <ol>
+                    {% for song in concert_songs %}
+                        <li>{{ song.name }}</li>
+                    {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

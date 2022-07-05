@@ -7,5 +7,16 @@
 
 {% include 'components/text_background.html' %}
 
+<div class="container py-5">
+    <div class="h_bottom_border my-5">Стихи</div>
+    <div class="poetry-list row">
+        {% for verse in verses %}
+        <div class="col-6 my-3">
+            <a href="{% url 'verse.show' verse.id %}">{{ verse.name }}</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 
 {% endblock %}

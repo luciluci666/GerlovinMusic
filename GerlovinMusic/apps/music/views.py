@@ -6,6 +6,7 @@ from django.http import HttpResponse
 
 import random
 import os
+import datetime
 
 from .models import *
 from .forms import *
@@ -41,7 +42,6 @@ class music(MyPage):
 
     def show(request, id):
         song = Music.objects.get(pk = id)
-        
         playlist = Playlist.objects.filter(songs = id)[:1][0]
 
 
@@ -50,10 +50,37 @@ class music(MyPage):
 
 
 class verse(MyPage):
-        def index(request):
-            verses = Verse.objects.all().order_by("-id")
-            return render(request,"verse/index.html", {'form' : form})
+    def index(request):
+        verses = Verse.objects.all().order_by("-id")
 
-        def show(request, id):
+        return render(request,"verse/index.html", {'form' : form, 'verses' : verses})
 
-            return render(request, "verse/show.html", {'form' : form})
+    def show(request, id):
+        verse = Verse.objects.get(pk = id)
+
+        return render(request, "verse/show.html", {'form' : form, 'verse' : verse})
+
+
+class concert(MyPage):
+    def index(request):
+        concerts = Concert.objects.all().order_by("-id")
+
+        startDate = datetime.date(2000, 1, 1 )
+        endDate = datetime.date(2100, 1, 1 )
+        now = datetime.date.today()
+        performance = Concert.objects.filter(date_time__range=[now, endDate] ).order_by("-date_time")
+        concerts = Concert.objects.filter(date_time__range=[startDate, now] ).order_by("-date_time")
+
+        return render(request,"concert/index.html", {'form' : form, 'concerts' : concerts, 'performance' : performance})
+
+    def show(request, id):
+        concert = Concert.objects.get(pk = id)
+
+        now = datetime.date.today()
+        concert_date = datetime.date(concert.date_time.year, concert.date_time.month , concert.date_time.day)
+        if(concert_date > now):
+            performance = True
+        else:
+            performance = False
+            
+        return render(request, "concert/show.html", {'form' : form, 'concert' : concert, 'performance' : performance})

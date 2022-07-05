@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} GerlovinMusic {% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <div class="h_bottom_border my-5">Концерты</div>
+    <div class="h_bottom_border my-5">Новости и архив концертов</div>
+    <div class="row">
+        <div class="">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus feugiat neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio ultricies nec ullamcorper et. Ut dictum leo amet tristique.</div>
+        <div class="scrollmenu row">
+            {% for concert in performance %}
+            <a href="{% url 'concert.show' concert.id %}" class="">
+                <img src="{{ concert.image_file.url }}" alt="">
+                <div class="">{{ concert.name }}</div>
+                <div class="">{{ concert.date_time }}</div>
+            </a>
+            {% endfor %}
+            {% for concert in concerts %}
+            <a href="{% url 'concert.show' concert.id %}" class="">
+                <img src="{{ concert.image_file.url }}" alt="">
+                <div class="">{{ concert.name }}</div>
+                <div class="">{{ concert.date_time }}</div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="razd"></div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="">Первый концерт</div>
+            <div class="">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus feugiat neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio ultricies nec ullamcorper et. Ut dictum leo amet tristique. Bibendum in vulputate blandit ut aenean commodo cras eu pharetra. Sem ac faucibus elementum eu, magna sit dui id habitant. Erat adipiscing scelerisque feugiat magnis habitasse amet id massa risus.</div>
+        </div>
+        <div class="col-md-6 col-12">
+            <img src="{% static 'img/first_concert.png' %}" alt="">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
