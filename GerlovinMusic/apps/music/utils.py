@@ -36,7 +36,7 @@ class MyPage(View):
                 send_mail(
                     'Новое заявка на сайте GerlovinMusic',
                     text,
-                    'gerlovin.music@gmail.com',
+                    'gerl.adm@mail.ru',
                     ['gerlovin.music@gmail.com'],
                     fail_silently=False,
                     )

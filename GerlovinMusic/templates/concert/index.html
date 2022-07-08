@@ -6,37 +6,53 @@
 {% block content %}
 
 <div class="container py-5">
+    <!-- <div class="h_bottom_border my-5">Концерты</div> -->
     <div class="concert_list">
-        <div class="h_bottom_border my-5">Концерты</div>
-        <div class="h_bottom_border my-5">Новости и архив концертов</div>
-        <div class="row">
-            <div class="">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus feugiat neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio ultricies nec ullamcorper et. Ut dictum leo amet tristique.</div>
-            <div class="scrollmenu row">
+        <div class="h_bottom_border my-5 ">Новости и архив концертов</div>
+        <div class="full_scroll">
+           
+            <div class="scroll_menu">
                 {% for concert in performance %}
-                <a href="{% url 'concert.show' concert.id %}" class="">
+                <a href="{% url 'concert.show' concert.id %}" class="card performance">
                     <img src="{{ concert.image_file.url }}" alt="">
-                    <div class="">{{ concert.name }}</div>
-                    <div class="">{{ concert.date_time }}</div>
+                    <div class="concert-desc">
+                        <div class="concert-name">{{ concert.name }}</div>
+                        <div class="">{{ concert.date_time }}</div>
+                    </div>
                 </a>
                 {% endfor %}
                 {% for concert in concerts %}
-                <a href="{% url 'concert.show' concert.id %}" class="">
+                <a href="{% url 'concert.show' concert.id %}" class="card">
                     <img src="{{ concert.image_file.url }}" alt="">
-                    <div class="">{{ concert.name }}</div>
-                    <div class="">{{ concert.date_time }}</div>
+                    <div class="concert-desc">
+                        <div class="concert-name">{{ concert.name }}</div>
+                        <div class="">проведен - {{ concert.date_time }}</div>
+                    </div>
                 </a>
                 {% endfor %}
+            </div>
+            <div class="ftext-zone">
+                <div class="fixed-text">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus
+                    feugiat neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio
+                    ultricies nec ullamcorper et. Ut dictum leo amet tristique.</div>
             </div>
         </div>
     </div>
     <div class="razd"></div>
-    <div class="row">
+    <div class="row first-concert">
         <div class="col-md-6 col-12">
-            <div class="">Первый концерт</div>
-            <div class="">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus feugiat neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio ultricies nec ullamcorper et. Ut dictum leo amet tristique. Bibendum in vulputate blandit ut aenean commodo cras eu pharetra. Sem ac faucibus elementum eu, magna sit dui id habitant. Erat adipiscing scelerisque feugiat magnis habitasse amet id massa risus.</div>
+            <h4 class="">Первый концерт</h4>
+            <div class="my-3">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus
+                feugiat
+                neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio
+                ultricies
+                nec ullamcorper et. Ut dictum leo amet tristique. Bibendum in vulputate blandit ut aenean commodo cras
+                eu
+                pharetra. Sem ac faucibus elementum eu, magna sit dui id habitant. Erat adipiscing scelerisque feugiat
+                magnis habitasse amet id massa risus.</div>
         </div>
         <div class="col-md-6 col-12">
-            <img src="{% static 'img/first_concert.png' %}" alt="">
+            <img class="w-100 p-5" src="{% static 'img/first_concert.png' %}" alt="">
         </div>
     </div>
 </div>
