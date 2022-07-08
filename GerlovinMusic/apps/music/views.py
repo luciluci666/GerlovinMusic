@@ -84,3 +84,15 @@ class concert(MyPage):
             performance = False
             
         return render(request, "concert/show.html", {'form' : form, 'concert' : concert, 'performance' : performance})
+
+
+class press(MyPage):
+    def index(request):
+        text_list = [Text.objects.get(name = "Главный (ПР)"),
+            Text.objects.get(name = "Наша история (1)"),
+            Text.objects.get(name = "Наша история (2)"),
+            Text.objects.get(name = "Наша команда"),
+            Text.objects.get(name = "Наша цель"),
+        ]
+     
+        return render(request, "press/index.html", {'form' : form, 'text_list' : text_list})

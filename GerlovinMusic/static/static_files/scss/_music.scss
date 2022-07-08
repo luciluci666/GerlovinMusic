@@ -303,6 +303,17 @@
     }
 }
 
+.bordered_object{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 15px 10px;
+    margin: 0 15px
+}
+
+.info_list{
+    padding-top: 15px;
+}
+
 .song_show{
     display: block;
     margin: 0 auto;
@@ -315,5 +326,37 @@
     }
     .text-uppercase{
         font-weight: 600;
+    }
+    .music_show_desc{
+        padding: 15px 30px;
+        font-size: large;
+    }
+    .player_btns{
+        padding: 0 15px ;
+        @media only screen and (min-width: 992px) {
+            padding: 15px 0;
+        }
+    }
+
+    .music_show_info{
+        padding: 48px 0 15px 0;
+    }
+
+    .song_text{
+        padding: 15px;
+    }
+    .text{
+        font-weight: 550;
+        padding: 0 15px;
+        @media only screen and (max-width: 992px) {
+            padding: 15px 15px 0 15px;
+        }
+    }
+    .col-xl-0{
+        
+        @media only screen and (min-width: 1200px) {
+            width: max-content !important;
+            padding: 0 15px;
+        }
     }
 }

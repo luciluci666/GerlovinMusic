@@ -56,8 +56,18 @@ class Concert(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-class Press(models.Model):
+class Text(models.Model):
+    PAGES = (
+        ('index', 'Главная страница'),
+        ('music', 'Песни'),
+        ('verse', 'Стихи'),
+        ('concerts', 'Концерты'),
+        ('press', 'Пресс-релиз'),
+    )
+
+    page = models.CharField('На какой странице находится текст?', max_length=300, choices = PAGES)
+    name = models.CharField('Название', max_length=100, null=True, blank=True)
     text = HTMLField('Текст', null=True, blank=True)
- 
+
     def __str__(self):
-        return f"{'Пресс-релиз'}"
+        return f"{self.name}"

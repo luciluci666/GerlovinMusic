@@ -3,6 +3,7 @@ let player_btn_parent = document.getElementById('player_btn_block');
 let header = document.getElementById('header');
 let navbar_brand = document.getElementsByClassName('navbar-toggler')[0];
 let player_btn_bool = false;
+const screenHeight = window.screen.height
 
 
 
@@ -21,6 +22,10 @@ function text_decor_height() {
 if (typeof document.getElementsByClassName('text_background')[0] !== "undefined") {
     text_decor_height();
     window.addEventListener('resize', text_decor_height);
+}
+
+if (document.querySelector('body').scrollHeight  < screenHeight){
+    document.querySelector('.footer').style.position = 'absolute';
 }
 
 function CheckSize() {

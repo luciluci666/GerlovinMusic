@@ -11,6 +11,7 @@ urlpatterns = [
     path('verse/<id>', views.verse.show, name = 'verse.show'),
     path('concert/', views.concert.index, name = 'concert.index'),
     path('concert/<id>', views.concert.show, name = 'concert.show'),
+    path('about/', views.press.index, name = 'press.index'),
 
     path('message', utils.MyPage.message, name = 'message'),   
 ]

@@ -4,10 +4,13 @@
 @import '_index';
 @import '_music';
 @import '_playlist';
+@import '_verse';
+@import '_concert';
 
 body {
     font-family: 'Playfair Display', serif;
     background: #E5E5E5;
+    min-height: 100vh;
 }
 
 button{
@@ -92,6 +95,10 @@ a{
     p {
         font-weight: 600;
     }
+
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 .play_song{
