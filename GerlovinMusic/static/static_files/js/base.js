@@ -3,7 +3,9 @@ let player_btn_parent = document.getElementById('player_btn_block');
 let header = document.getElementById('header');
 let navbar_brand = document.getElementsByClassName('navbar-toggler')[0];
 let player_btn_bool = false;
+let simple_text = document.querySelector(".simple-text")
 const screenHeight = window.screen.height
+
 
 
 
@@ -28,6 +30,7 @@ if (document.querySelector('body').scrollHeight  < screenHeight){
     document.querySelector('.footer').style.position = 'absolute';
 }
 
+
 function CheckSize() {
     if ($(window).width() > 576 && player_btn_bool == true) {
         player_btn_parent.appendChild(player_btn);
@@ -39,6 +42,13 @@ function CheckSize() {
         navbar_brand.addEventListener('click', toggler_clicked);
 
         player_btn_bool = true;
+    }
+
+    if ($(window).width() < 992 && typeof simple_text != "undefined"){
+        $(simple_text).detach().appendTo(document.querySelector('.our_history'));
+    }
+    else if($(window).width() > 992 && typeof simple_text != "undefined"){
+        $(simple_text).detach().appendTo(document.querySelector('.simple_text_zone'));
     }
 }
 

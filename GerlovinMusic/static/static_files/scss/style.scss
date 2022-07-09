@@ -6,11 +6,13 @@
 @import '_playlist';
 @import '_verse';
 @import '_concert';
+@import '_press';
 
 body {
     font-family: 'Playfair Display', serif;
     background: #E5E5E5;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 button{
