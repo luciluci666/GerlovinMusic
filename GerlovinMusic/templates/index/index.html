@@ -13,9 +13,7 @@
             </div>
             <div class="col-4 mt-sm-4">
                 <div class="h5">Сергей Герловин</div>
-                <div class="">In pretium vitae quam felis, sed dolor, duis vel urna. Morbi semper platea risus id
-                    aliquet diam turpis mi, id. Nisl, at varius orci vel malesuada quis praesent phasellus tincidunt.
-                    Amet placerat vulputate leo et dapibus tellus id nunc faucibus. Augue tellus massa vitae urna.</div>
+                <div class="">{{ text_list.0.text|safe }}</div>
             </div>
             <img class="notes" src="{% static 'img/notes.jpg' %}">
             <div class="index_shade"></div>
@@ -39,12 +37,7 @@
             {% endfor %}
         </div>
         <div class="grey_blocks col-6">
-            <div class="first">Felis nulla dictumst sed vel nisl, tellus hac consectetur vel. Urna, viverra mauris neque
-                lorem diam sed bibendum convallis. Leo in lorem morbi diam, ante eget consectetur imperdiet feugiat.
-                Quisque at erat odio ut. At sed bibendum volutpat aliquam vivamus integer. Phasellus vulputate blandit
-                nec lacus tristique aenean. Viverra rhoncus purus arcu sed dignissim cras enim id pharetra. Nulla sed ut
-                molestie vulputate non. Arcu aliquet elementum ipsum condimentum semper velit feugiat. Amet dictumst
-                amet sagittis, amet id felis.</div>
+            <div class="first">{{ text_list.1.text|safe }}</div>
             <div class="second"></div>
             <div class="third"></div>
         </div>
@@ -59,12 +52,7 @@
             <div class="index_concert_text">
                 <div>
                     <div class="index_concert_border"></div>
-                    <div class="index_concert_border_text">Nisi, ac massa tincidunt enim congue neque nascetur. Amet,
-                        etiam nibh est eros eu aliquam. Facilisis in odio fermentum, habitasse at mattis nam
-                        scelerisque. Sit consectetur ut ut tristique vulputate quis nisi, lacus. Nunc cras feugiat netus
-                        leo nisi, ornare. Id pretium purus in nulla sed pharetra. Ultrices aliquet urna pharetra tempus
-                        feugiat etiam consequat diam sit. Nunc porttitor libero lectus diam interdum amet dui. Euismod
-                        vel velit congue sed. Leo tristique tempus tellus dolor, at.</div>
+                    <div class="index_concert_border_text">{{ text_list.2.text|safe }}</div>
                 </div>
             </div>
         </div>

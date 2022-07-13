@@ -32,9 +32,7 @@
                 {% endfor %}
             </div>
             <div class="ftext-zone">
-                <div class="fixed-text">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus
-                    feugiat neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio
-                    ultricies nec ullamcorper et. Ut dictum leo amet tristique.</div>
+                <div class="fixed-text">{{ text_list.0.text|safe }}</div>
             </div>
         </div>
     </div>
@@ -42,14 +40,7 @@
     <div class="row first-concert">
         <div class="col-md-6 col-12">
             <h4 class="">Первый концерт</h4>
-            <div class="my-3">Imperdiet feugiat tristique elit etiam et eget ultrices. Massa pharetra facilisi faucibus
-                feugiat
-                neque consequat, suspendisse mauris. Mi etiam egestas aliquam quis leo sit risus. Faucibus odio
-                ultricies
-                nec ullamcorper et. Ut dictum leo amet tristique. Bibendum in vulputate blandit ut aenean commodo cras
-                eu
-                pharetra. Sem ac faucibus elementum eu, magna sit dui id habitant. Erat adipiscing scelerisque feugiat
-                magnis habitasse amet id massa risus.</div>
+            <div class="my-3">{{ text_list.1.text|safe }}</div>
         </div>
         <div class="col-md-6 col-12">
             <img class="w-100 p-5" src="{% static 'img/first_concert.png' %}" alt="">

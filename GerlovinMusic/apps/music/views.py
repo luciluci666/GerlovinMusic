@@ -20,7 +20,12 @@ class index(MyPage):
         MyPage.songs_json(Music)
         random_sogns = random.sample(list(Music.objects.all()), 3)
 
-        return render(request, "index/index.html", {'form' : form, 'songs' : random_sogns})
+        text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
+            Text.objects.get(name = "Песни"),
+            Text.objects.get(name = "Фотографии с концертов"),
+        ]
+
+        return render(request, "index/index.html", {'form' : form, 'songs' : random_sogns, 'text_list' : text_list})
       
     
 
@@ -71,7 +76,11 @@ class concert(MyPage):
         performance = Concert.objects.filter(date_time__range=[now, endDate] ).order_by("-date_time")
         concerts = Concert.objects.filter(date_time__range=[startDate, now] ).order_by("-date_time")
 
-        return render(request,"concert/index.html", {'form' : form, 'concerts' : concerts, 'performance' : performance})
+        text_list = [Text.objects.get(name = "Главный (КОНЦЕРТЫ)"),
+            Text.objects.get(name = "Первый концерт"),
+        ]
+
+        return render(request,"concert/index.html", {'form' : form, 'concerts' : concerts, 'performance' : performance, 'text_list' : text_list})
 
     def show(request, id):
         concert = Concert.objects.get(pk = id)

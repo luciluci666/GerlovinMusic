@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 
 from tinymce.models import HTMLField
@@ -12,10 +13,15 @@ class Music(models.Model):
         'Загрузить песню', blank=True, null=True, upload_to='Music')
     image_file = models.ImageField(
         'Загрузить постер', blank=True, null=True, upload_to='MusicPosters')
-    pub_date = models.DateField(auto_now_add=True)
+    pub_date = models.DateField("Дата публикации", auto_now_add=True)
 
     def __str__(self):
         return f"{self.name}"
+    
+    class Meta:
+        verbose_name = "Песня"
+        verbose_name_plural = "Песни"
+
 
 
 class Playlist(models.Model):
@@ -25,20 +31,28 @@ class Playlist(models.Model):
     image_file = models.ImageField(
         'Загрузить постер', blank=True, null=True, upload_to='PlaylistPosters')
     songs = models.ManyToManyField(Music)
-    pub_date = models.DateField(auto_now_add=True)
+    pub_date = models.DateField("Дата публикации", auto_now_add=True)
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = "Плэйлист"
+        verbose_name_plural = "Плэйлисты"
 
 
 class Verse(models.Model):
     name = models.CharField('Название', max_length=100, null=True, blank=True)
     desc = models.CharField('Описание', max_length=500, null=True, blank=True)
     text = HTMLField('Текси', null=True, blank=True)
-    pub_date = models.DateField(auto_now_add=True)
+    pub_date = models.DateField("Дата публикации", auto_now_add=True)
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = "Стих"
+        verbose_name_plural = "Стихи"
 
 
 class Concert(models.Model):
@@ -51,10 +65,15 @@ class Concert(models.Model):
     songs = models.ManyToManyField(Music)
     date_time = models.DateTimeField(
         ("Дата проведения"), auto_now=False, auto_now_add=False)
-    pub_date = models.DateField(auto_now_add=True)
+    pub_date = models.DateField("Дата публикации", auto_now_add=True)
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = "Концерт"
+        verbose_name_plural = "Концерты"
+
 
 class Text(models.Model):
     PAGES = (
@@ -71,3 +90,7 @@ class Text(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    class Meta:
+        verbose_name = "Текст"
+        verbose_name_plural = "Тексты"
