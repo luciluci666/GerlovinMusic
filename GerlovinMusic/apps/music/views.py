@@ -18,7 +18,11 @@ form = ContactForm()
 class index(MyPage):
     def index(request):
         MyPage.songs_json(Music)
-        random_sogns = random.sample(list(Music.objects.all()), 3)
+
+        try:
+            random_sogns = random.sample(list(Music.objects.all()), 3)
+        except:
+            random_sogns = "songs_error"
 
         text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
             Text.objects.get(name = "Песни"),
@@ -37,12 +41,13 @@ class music(MyPage):
 
         pl_buttons = []
         i = 0
-        while True:
-            i += 1
-            pl_buttons.append(i)
-            if i == playlists.__len__() - 1:
-                break
-            
+        if playlists.__len__() > 0:
+            while True:
+                i += 1
+                pl_buttons.append(i)
+                if i == playlists.__len__() - 1:
+                    break
+                
         return render(request,"music/index.html", {'form' : form, 'songs' : songs, 'playlists' : playlists, 'pl_buttons' : pl_buttons})
 
     def show(request, id):

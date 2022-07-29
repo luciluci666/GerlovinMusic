@@ -25,6 +25,7 @@
     <div class="h_bottom_border">Песни</div>
     <div class="d-flex justify-content-between my-5 index-songs-list">
         <div class="col-4 col-xl-3 my-2 py-3 index-songs_block">
+        {% if songs != "songs_error" %}
             {% for song in songs %}
             <div class="index-songs d-flex justify-content-around">
                 <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song mx-1" id="play"><img name="song_{{ song.id }}" src="{% static 'img/icons/play.png' %}"
@@ -35,6 +36,7 @@
                 </div>
             </div>
             {% endfor %}
+        {% endif %}
         </div>
         <div class="grey_blocks col-6">
             <div class="first">{{ text_list.1.text|safe }}</div>
