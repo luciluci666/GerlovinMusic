@@ -91,18 +91,31 @@ WSGI_APPLICATION = 'GerlovinMusic.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    ### sqllite ###
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
 
+    ### mysql local ###
     'default': {
         'NAME' : 'gerlovinmusic',
         'ENGINE': 'django.db.backends.mysql',
-        'USER' : 'gerlovinmusic',
+        'USER' : 'root',
         'PASSWORD' : 'papanhb2022',
         'HOST' : 'localhost',
-    }
+        'PORT' : '7000',
+    },
+
+    ### mysql server ###
+    # 'default': {
+    #     'NAME' : 'gerlovinmusic',
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'USER' : 'gerlovinmusic',
+    #     'PASSWORD' : 'papanhb2022',
+    #     'HOST' : 'localhost',
+    # }
+    
 }
 
 
