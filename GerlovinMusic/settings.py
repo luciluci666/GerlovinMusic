@@ -98,23 +98,23 @@ DATABASES = {
     # }
 
     ### mysql local ###
-    'default': {
-        'NAME' : 'gerlovinmusic',
-        'ENGINE': 'django.db.backends.mysql',
-        'USER' : 'root',
-        'PASSWORD' : 'papanhb2022',
-        'HOST' : 'localhost',
-        'PORT' : '7000',
-    },
-
-    ### mysql server ###
     # 'default': {
     #     'NAME' : 'gerlovinmusic',
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'USER' : 'gerlovinmusic',
+    #     'USER' : 'root',
     #     'PASSWORD' : 'papanhb2022',
     #     'HOST' : 'localhost',
-    # }
+    #     'PORT' : '7000',
+    # },
+
+    ### mysql server ###
+    'default': {
+        'NAME' : 'gerlovinmusic',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER' : 'gerlovinmusic',
+        'PASSWORD' : 'papanhb2022',
+        'HOST' : 'localhost',
+    }
     
 }
 
