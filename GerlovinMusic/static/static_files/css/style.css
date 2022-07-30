@@ -569,17 +569,28 @@ input[type=range]::-webkit-slider-thumb {
   .playlists button {
     height: 144px;
   }
+  .playlists .pl_btn_opener_img {
+    width: 100%;
+  }
   .playlists .pl_name {
     max-width: 90%;
+    display: inline-block;
+    margin: 0 auto;
   }
   .playlists img {
     max-height: 104px;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
   }
   .playlists .col-lg-5 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+  }
+  .playlists .carousel-control-next, .playlists .carousel-control-prev {
+    height: 100%;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -744,26 +755,20 @@ input[type=range]::-webkit-slider-thumb {
   height: 30px;
 }
 
-.verse_list div {
+.verse_list a {
   background: rgba(196, 196, 196, 0.1);
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0px 0px 68px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(48px);
   border-radius: 15px;
   font-size: x-large;
   padding: 10px;
-  transition: all 0.1s linear;
+  transition: all 0.2s linear;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.verse_list div:hover {
-  opacity: 0.8;
-}
-.verse_list div a {
-  transition: all 0.2s linear;
-}
-.verse_list div a:hover {
+.verse_list a:hover {
   opacity: 0.7;
   color: inherit;
 }
@@ -1305,6 +1310,14 @@ a {
 }
 .footer p {
   font-weight: 600;
+}
+@media only screen and (max-width: 576px) {
+  .footer .d-flex {
+    flex-direction: column !important;
+  }
+  .footer .d-flex .rights {
+    margin-top: 10px;
+  }
 }
 
 .play_song {

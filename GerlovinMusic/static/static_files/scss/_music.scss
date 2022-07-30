@@ -226,15 +226,26 @@
         button{
             height: 144px;
         }
+        .pl_btn_opener_img{
+            width: 100%;
+        }
         .pl_name{
             max-width: 90%;
+            display: inline-block;
+            margin: 0 auto;
         }
         img{
             max-height: 104px;
+            max-width: 80%;
+            display: block;
+            margin: 0 auto;
         }
         .col-lg-5{
             @include ellip(4)
             
+        }
+        .carousel-control-next, .carousel-control-prev{
+            height: 100%;
         }
         
         height: 204px;

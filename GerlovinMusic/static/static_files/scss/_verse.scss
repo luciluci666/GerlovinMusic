@@ -6,7 +6,7 @@
 }
 
 .verse_list{
-    div{
+    a{
     background: rgba(196, 196, 196, 0.1);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.15), inset 0px 0px 68px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(48px);
@@ -15,18 +15,13 @@
     font-size:x-large;
     padding: 10px;
 
-    transition: all .1s linear;
+    transition: all .2s linear;
     &:hover{
-        opacity: 0.8;
+        opacity: 0.7;
+        color: inherit;
       
     }
-    a{
-        transition: all .2s linear;
-        &:hover{
-            opacity: 0.7;
-            color: inherit;
-        }
-    }
+   
     @include ellip(1)
 }
 @media only screen and (max-width: 768px) {

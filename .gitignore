@@ -4,4 +4,5 @@ package.json
 prepros.config
 GerlovinMusic/static/static_files/media/
 GerlovinMusic/static/static_files/songs/
+GerlovinMusic/static/static_files/js/json/songs.json
 *.pyc

@@ -37,8 +37,8 @@
             <div class="carousel-item">
             {% endif %}
                 <div class="music_playlist_item d-flex justify-content-around px-5 align-items-center">
-                    <div class="col-md-5">
-                        <button data-bs-toggle="modal" data-bs-target="#Playlist_{{ playlist.id }}">
+                    <div class="col-md-5 d-flex justify-content-center">
+                        <button class="pl_btn_opener_img" data-bs-toggle="modal" data-bs-target="#Playlist_{{ playlist.id }}">
                             {% if playlist.image_file %}
                             <div><img src="{{ playlist.image_file.url }}" alt=""></div>
                             {% else %}
