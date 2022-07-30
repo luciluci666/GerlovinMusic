@@ -5,3 +5,5 @@ prepros.config
 GerlovinMusic\static\static_files\img
 GerlovinMusic\static\static_files\media
 GerlovinMusic\static\static_files\songs
+GerlovinMusic\__pycache__
+GerlovinMusic\apps\music\__pycache__
