@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'GerlovinMusic.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if SERVER_IP == '83.229.83.226':
+if SERVER_IP == '127.0.0.1':
     DATABASES = {
         ### sqllite ###
         # 'default': {
