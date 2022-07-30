@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import socket
 from pathlib import Path
 import os,sys
 from unicodedata import name
@@ -33,8 +33,10 @@ ALLOWED_HOSTS = ['*']
 
 INTERNAL_IPS = [
     "127.0.0.1",
+    "192.168.2.77"
 ]
 
+SERVER_IP = socket.gethostbyname(socket.gethostname())
 
 # Application definition
 
@@ -90,7 +92,35 @@ WSGI_APPLICATION = 'GerlovinMusic.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
+if SERVER_IP == '83.229.83.226':
+    DATABASES = {
+        ### sqllite ###
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.sqlite3',
+        #     'NAME': BASE_DIR / 'db.sqlite3',
+        # }
+
+        ### mysql local ###
+        # 'default': {
+        #     'NAME' : 'gerlovinmusic',
+        #     'ENGINE': 'django.db.backends.mysql',
+        #     'USER' : 'root',
+        #     'PASSWORD' : 'papanhb2022',
+        #     'HOST' : 'localhost',
+        #     'PORT' : '7000',
+        # },
+
+        ### mysql server ###
+        'default': {
+            'NAME' : 'gerlovinmusic',
+            'ENGINE': 'django.db.backends.mysql',
+            'USER' : 'gerlovinmusic',
+            'PASSWORD' : 'papanhb2022',
+            'HOST' : 'localhost',
+        }
+    }
+else:
+    DATABASES = {
     ### sqllite ###
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -98,25 +128,16 @@ DATABASES = {
     # }
 
     ### mysql local ###
-    # 'default': {
-    #     'NAME' : 'gerlovinmusic',
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'USER' : 'root',
-    #     'PASSWORD' : 'papanhb2022',
-    #     'HOST' : 'localhost',
-    #     'PORT' : '7000',
-    # },
-
-    ### mysql server ###
     'default': {
         'NAME' : 'gerlovinmusic',
         'ENGINE': 'django.db.backends.mysql',
-        'USER' : 'gerlovinmusic',
+        'USER' : 'root',
         'PASSWORD' : 'papanhb2022',
         'HOST' : 'localhost',
-    }
-    
+        'PORT' : '7000',
+    },
 }
+
 
 
 # Password validation
@@ -176,3 +197,6 @@ EMAIL_PORT=25
 EMAIL_HOST_USER='gerl.adm@mail.ru'
 EMAIL_HOST_PASSWORD='MN97MUcPbssts7nNymbu'
 EMAIL_USE_TLS=True
+
+
+
