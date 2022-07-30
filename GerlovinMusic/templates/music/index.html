@@ -72,7 +72,7 @@
 
     <div class="song_list_music my-5">
         {% for song in songs %}
-        <div class="row justify-content-around music_song_item px-3">
+        <div class="row justify-content-around music_song_item px-3 my-3">
             <div class="col-1 music_note_music "><img src="{% static 'img\icons\music_notes_second.png' %}"></div>
             <div class="row col-lg-9 justify-content-around">
                 <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song col-2 mx-1"

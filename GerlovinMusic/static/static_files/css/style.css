@@ -163,6 +163,7 @@ input[type=range]::-webkit-slider-thumb {
 .index_header .col-12 {
   position: relative;
   color: #fff;
+  text-align: justify;
 }
 .index_header .col-12 .notes {
   position: absolute;
@@ -284,6 +285,7 @@ input[type=range]::-webkit-slider-thumb {
   background: #C4C4C4;
   z-index: 0;
   padding: 15px;
+  text-align: justify;
 }
 .grey_blocks .second {
   position: absolute;
@@ -304,6 +306,7 @@ input[type=range]::-webkit-slider-thumb {
   border-left: 1px solid black;
   padding-left: 15px;
   padding-top: 30px;
+  text-align: justify;
 }
 
 .index_concert_border {
@@ -823,6 +826,9 @@ input[type=range]::-webkit-slider-thumb {
 .concert_list .full_scroll .fixed-text {
   color: #6d6c6c;
   display: inline-block;
+  text-align: justify;
+  margin-right: 15px;
+  margin-bottom: 90px;
 }
 .concert_list .scroll_menu {
   display: flex;
@@ -883,7 +889,13 @@ input[type=range]::-webkit-slider-thumb {
   left: 0;
   height: 100%;
 }
+.concert_list .scroll_menu .performance:hover {
+  color: #fff;
+}
 
+.first-concert {
+  text-align: justify;
+}
 @media only screen and (max-width: 768px) {
   .first-concert img {
     padding: 30px !important;
@@ -951,6 +963,7 @@ input[type=range]::-webkit-slider-thumb {
 .press_release .white_border {
   padding: 50px;
   background-color: white;
+  text-align: justify;
   position: absolute;
   width: 50%;
   bottom: 0;
@@ -965,12 +978,14 @@ input[type=range]::-webkit-slider-thumb {
   border: 1px solid black;
   width: 80%;
   padding: 30px 50px;
+  text-align: justify;
 }
 .press_release .simple-text {
   position: absolute;
   left: 10%;
   bottom: 10px;
   width: 80%;
+  text-align: justify;
 }
 .press_release .our_history img {
   height: 100%;
@@ -980,6 +995,7 @@ input[type=range]::-webkit-slider-thumb {
   position: absolute;
   top: 10px;
   left: 10%;
+  text-align: justify;
 }
 .press_release .our_team .zone {
   position: relative;
@@ -1036,6 +1052,7 @@ input[type=range]::-webkit-slider-thumb {
 .press_release .our_mission .text .bg_wt .inside_text {
   position: relative;
   padding: 10px;
+  text-align: justify;
 }
 .press_release .our_mission .text .bg_wt .border_top {
   border-top: 1px solid black;
