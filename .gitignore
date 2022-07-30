@@ -2,10 +2,6 @@ node_modules/
 package-lock.json
 package.json
 prepros.config
-GerlovinMusic\static\static_files\media\
-GerlovinMusic\static\static_files\songs\
-GerlovinMusic\__pycache__\
-GerlovinMusic\apps\music\__pycache__\
-GerlovinMusic\apps\music\migrations\__pycache__\
-GerlovinMusic\apps\music\templatetags\__pycache__\
+GerlovinMusic/static/static_files/media/
+GerlovinMusic/static/static_files/songs/
 *.pyc
