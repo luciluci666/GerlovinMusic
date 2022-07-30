@@ -5,42 +5,111 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="header_inner">
-            <img class="back" src="{% static 'images/notes.jpg' %}" alt="">
-            <div class="shade back"></div>
-        <div class="header_row">
-            <img src="{% static 'images/main.jpg' %}" alt="">
-            <div class="header_col">
-                <p class="white_text">Сергей Герловин</p>
-                <p class="white_plaifair">In pretium vitae quam felis, sed dolor, duis vel urna. Morbi semper platea risus id aliquet diam turpis mi, id. Nisl, at varius orci vel malesuada quis praesent phasellus tincidunt. Amet placerat vulputate leo et dapibus tellus id nunc faucibus. Augue tellus massa vitae urna.</p>
+<div class="index_header container-fluid p-0">
+    <div class="col-12">
+        <div class="d-flex justify-content-around p-5">
+            <div class="col-4">
+                <img class="main_img" src="{% static 'img/artist/main.jpg' %}">
+            </div>
+            <div class="col-4 mt-sm-4">
+                <div class="h5">Сергей Герловин</div>
+                <div class="">{{ text_list.0.text|safe }}</div>
+            </div>
+            <img class="notes" src="{% static 'img/notes.jpg' %}">
+            <div class="index_shade"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-3 ">
+    <div class="h_bottom_border">Песни</div>
+    <div class="d-flex justify-content-between my-5 index-songs-list">
+        <div class="col-4 col-xl-3 my-2 py-3 index-songs_block">
+        {% if songs != "songs_error" %}
+            {% for song in songs %}
+            <div class="index-songs d-flex justify-content-around">
+                <button onclick="song_opener(this)" name="song_{{ song.id }}" class="play_song mx-1" id="play"><img name="song_{{ song.id }}" src="{% static 'img/icons/play.png' %}"
+                        alt=""></button>
+                <div class="col-8">
+                    <a href="{% url 'music.show' song.id %}" class="text-uppercase">{{ song.name }}</a>
+                    <div class="font-weight-bold">Sergei Gerlovin</div>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+        <div class="grey_blocks col-6">
+            <div class="first">{{ text_list.1.text|safe }}</div>
+            <div class="second"></div>
+            <div class="third"></div>
+        </div>
+    </div>
+
+    <div class="razd"></div>
+
+    <div class="index_concert_block d-flex justify-content-between">
+        <div class="col-xl-3" style="position: relative;">
+            <div class="h_bottom_border" style="margin-left: 15px">Фотографии</div><br>
+            <div class="h_bottom_border">с концертов</div>
+            <div class="index_concert_text">
+                <div>
+                    <div class="index_concert_border"></div>
+                    <div class="index_concert_border_text">{{ text_list.2.text|safe }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="concert_img_grid col-xl-9 ">
+            <div class="row my-3 justify-content-end">
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+            </div>
+            <div class="row my-3 justify-content-end">
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+            </div>
+            <div class="row my-3 justify-content-end">
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
+                <div class="col-2"><img src="{% static 'img/artist/IMG_1820.JPG' %}"></div>
             </div>
         </div>
     </div>
 
-    <div class="block">
-        <div class="black_playfair h">Песни</div>
-        <div class="row_block">
-            <div class="songs_index">
-                <audio class="song" controls >
-                    <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
-                </audio> 
-                <audio class="song" controls >
-                    <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
-                </audio> 
-                <audio class="song"  controls >
-                    <source src="{% static 'songs/song.mp3' %}" type="audio/mpeg">
-                </audio> 
+    <div class="razd"></div>
+    <div class="h_bottom_border" style="margin-bottom: 30px;">Концерты</div>
+    <div class="px-5">
+        <div style="font-size: 23px; font-weight: 550;">concert in tel-aviv</div>
+        <div>rotshil street, 35/2</div>
+        <div class="index_concert_release_block row justify-content-around py-3">
+            <div class="col-lg-9 col-7">
+                <iframe width="80%" height="340" src="https://www.youtube.com/embed/8inQXjgmJuE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-            <div class="song_text_index">
-                <div class="square one">
-                    <div class="black_playfair"></div>
+            <div class="col-lg-3 col-5">
+                <div class="index_concert_releaze">
+                    <p>концерт в..............</p>
+                    <p>дата: 30.07.2020</p>
+                    <p>Песни: </p>
+                    <p>1. Название песни</p>
+                    <p>2. Название песни</p>
+                    <p>3. Название песни</p>
+                    <p>4. Название песни</p>
+                    <p>5. Название песни</p>
                 </div>
-                <div class="square two"></div>
-                <div class="square three"></div>
             </div>
         </div>
     </div>
+
 </div>
 
 {% endblock %}

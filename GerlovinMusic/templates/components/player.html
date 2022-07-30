@@ -1,0 +1,49 @@
+{% load static %}
+<div id="player">
+   <div id="player_overlay"></div>
+
+      <div class="player d-flex flex-column p-1 justify-content-center">
+
+         <div class="image_block"><img id="track_image" src="{% static 'media/MusicPosters/default.png' %}"></div>
+
+         <div class="info py-2">
+            <div id="title">Besishodnost</div>
+            <div id="artist">Sergei Gerlovin</div>
+         </div>
+
+         <div class="duration py-1">
+            <input type="range" min="0" max="100" value="0" id="duration_slider" onchange="change_duration(this)">
+         </div>
+
+         <div class="row py-2">
+            <div onmouseout="volume_close()" onmouseover="volume_open()">
+               <input orient="vertical" type="range" min="0" max="100" value="90" onchange="volume_change()"
+                  id="volume">
+               <button onclick="mute_sound()" id="volume_btn" class="my-2 "><img id="volume_img"
+                     src="{% static 'img/icons/sound.png' %}" alt=""></button>
+            </div>
+            <button onclick="previous_song()" class="col mx-1" id="pre"><img src="{% static 'img/icons/skip.png' %}"
+                  alt=""></button>
+            <button onclick="justplay()" class="col mx-1" id="play"><img id="play_img"
+                  src="{% static 'img/icons/play.png' %}" alt=""></button>
+            <button onclick="next_song()" class="col mx-1" id="next"><img src="{% static 'img/icons/rewind.png' %}"
+                  alt=""></button>
+         </div>
+
+      </div>
+</div>
+
+<script defer src="{% static 'js/player.js' %}"></script>
+
+<script>
+   $.getJSON("{% static 'js/json/songs.json' %}", function (json) {
+      json.forEach(element => {
+         element.path = '{% static "media/" %}' + element.path;
+         if (element.poster !== "") {
+            element.poster = '{% static "media/" %}' + element.poster;
+         }
+      });
+      json = JSON.stringify(json);
+      localStorage.setItem('json', json);
+   });
+</script>

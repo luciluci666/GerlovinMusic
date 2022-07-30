@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} GerlovinMusic {% endblock %}
+
+{% block content %}
+
+<div class="container py-5 ">
+    <div class="verse_show">
+        <div class="h_bottom_border my-5">{{ verse.name }}</div>
+        <div class="verse_text">{{ verse.text|safe }}</div>
+        <div class="verse_desc m-5 col-7">
+            <h4 class="">Описание</h4>
+            <div class="">{{ verse.desc }}</div>
+            <div class="verse_date">Дата: {{ verse.pub_date }}</div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

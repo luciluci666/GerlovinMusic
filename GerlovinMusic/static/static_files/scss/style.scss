@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import '_message_form';
+@import '_player';
+@import '_index';
+@import '_music';
+@import '_playlist';
+@import '_verse';
+@import '_concert';
+@import '_press';
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: #E5E5E5;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+button{
+    border: none;
+    background: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.w-100{
+    width: 100%;
+}
+
+.navbar-brand {
+    width: 40px;
+
+    img {
+        position: absolute;
+        top: 15px;
+        width: 60px;
+    }
+}
+
+.navbar-nav {
+    button {
+        background: none;
+        border: none;
+    }
+
+    .main_nav {
+        @media only screen and (max-width: 576px) {
+            padding-top: 45px;
+        }
+    }
+}
+
+#player_btn {
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 100%;
+    background: none;
+    border: none;
+
+    @media only screen and (max-width: 576px) {
+        position: absolute;
+        top: 7px;
+        right: 75px;
+    }
+
+    img {
+        height: 30px;
+        position: absolute;
+        transition: all .05s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.social {
+    border-top: 1px solid black;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+    div {
+        display: inline-block;
+        margin: 0 auto;
+    }
+}
+
+.footer {
+
+    background: radial-gradient(126.07% 126.07% at 50% 114.59%, rgba(81, 81, 81, 0.7) 0%, rgba(235, 235, 235, 0) 100%);
+    padding-bottom: 70px;
+
+    p {
+        font-weight: 600;
+    }
+
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+.play_song{
+    z-index: 10;
+}

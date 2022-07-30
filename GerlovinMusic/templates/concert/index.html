@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} GerlovinMusic {% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+    <!-- <div class="h_bottom_border my-5">Концерты</div> -->
+    <div class="concert_list">
+        <div class="h_bottom_border my-5 ">Новости и архив концертов</div>
+        <div class="full_scroll">
+           
+            <div class="scroll_menu">
+                {% for concert in performance %}
+                <a href="{% url 'concert.show' concert.id %}" class="card performance">
+                    <img src="{{ concert.image_file.url }}" alt="">
+                    <div class="concert-desc">
+                        <div class="concert-name">{{ concert.name }}</div>
+                        <div class="">{{ concert.date_time }}</div>
+                    </div>
+                </a>
+                {% endfor %}
+                {% for concert in concerts %}
+                <a href="{% url 'concert.show' concert.id %}" class="card">
+                    <img src="{{ concert.image_file.url }}" alt="">
+                    <div class="concert-desc">
+                        <div class="concert-name">{{ concert.name }}</div>
+                        <div class="">проведен - {{ concert.date_time }}</div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            <div class="ftext-zone">
+                <div class="fixed-text">{{ text_list.0.text|safe }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="razd"></div>
+    <div class="row first-concert">
+        <div class="col-md-6 col-12">
+            <h4 class="">Первый концерт</h4>
+            <div class="my-3">{{ text_list.1.text|safe }}</div>
+        </div>
+        <div class="col-md-6 col-12">
+            <img class="w-100 p-5" src="{% static 'img/first_concert.png' %}" alt="">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,49 @@
+.modal-content {
+    background-color: #ffffff00;
+    border: none;
+}
+
+.message_form {
+    color: #C4C4C4;
+    background-color: #2E2E2E;
+    border-radius: 20px;
+
+    input,
+    textarea {
+        background-color: #2E2E2E;
+        color: #C4C4C4;
+        border-radius: 12px;
+        width: 100%;
+        outline: none;
+        outline: 1px #fff;
+    }
+
+    input {
+        height: 25px;
+    }
+
+    .h5 {
+        color: #fff;
+    }
+
+    .btn-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        outline: none;
+    }
+
+    .message_inputs {
+        color: #C4C4C4;
+        background-color: #2E2E2E;
+        box-shadow: 5px 5px #2E2E2E !important;
+
+        &:active,
+        &:hover,
+        &:focus {
+            background-color: #2E2E2E;
+            box-shadow: 5px 5px #2E2E2E !important;
+        }
+
+    }
+}
