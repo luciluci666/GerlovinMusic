@@ -15,7 +15,7 @@
                 {% for concert in performance %}
                 <a href="{% url 'concert.show' concert.id %}" class="card performance">
                     <img src="{{ concert.image_file.url }}" alt="">
-                    <div class="concert-desc">
+                    <div class="concert-desc conc-desc-perf">
                         <div class="concert-name">{{ concert.name }}</div>
                         <div class="">{{ concert.date_time }}</div>
                     </div>
