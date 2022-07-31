@@ -5,3 +5,13 @@ prepros.config
 GerlovinMusic/static/static_files/media/
 GerlovinMusic/static/static_files/songs/
 *.pyc
+
+
+
+GerlovinMusic/static/css/
+GerlovinMusic/static/debug_toolbar/
+GerlovinMusic/static/django_tinymce/
+GerlovinMusic/static/img/
+GerlovinMusic/static/js/
+GerlovinMusic/static/scss/
+GerlovinMusic/static/tinymce/
