@@ -122,20 +122,20 @@ if SERVER_IP == '127.0.0.1':
 else:
     DATABASES = {
     ### sqllite ###
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 
     ### mysql local ###
-    # 'default': {
-    #     'NAME' : 'gerlovinmusic',
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'USER' : 'root',
-    #     'PASSWORD' : 'papanhb2022',
-    #     'HOST' : 'localhost',
-    #     'PORT' : '7000',
-    # },
+    'default': {
+        'NAME' : 'gerlovinmusic',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER' : 'root',
+        'PASSWORD' : 'papanhb2022',
+        'HOST' : 'localhost',
+        'PORT' : '7000',
+    },
 }
 
 

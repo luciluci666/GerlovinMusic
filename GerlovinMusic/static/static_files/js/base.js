@@ -4,13 +4,20 @@ let header = document.getElementById('header');
 let navbar_brand = document.getElementsByClassName('navbar-toggler')[0];
 let player_btn_bool = false;
 let simple_text = document.querySelector(".simple-text")
-const screenHeight = window.screen.height
-
-
 
 
 function text_decor_height() {
     let text_decoration = document.getElementsByClassName('text_background')[0].childNodes;
+    let summa_height = document.querySelector('.container-height').scrollHeight + document.querySelector('.footer').scrollHeight;
+    let screenHeight = $(window).height()
+    
+    if (summa_height  > screenHeight){
+        document.querySelector('.footer').style.position = 'static';   
+    }
+    else{
+        document.querySelector('.footer').style.position = 'absolute';
+    }
+    
     text_decoration.forEach(element => {
         try {
             element.style.height = document.getElementsByTagName('body')[0].scrollHeight + "px";
@@ -26,9 +33,7 @@ if (typeof document.getElementsByClassName('text_background')[0] !== "undefined"
     window.addEventListener('resize', text_decor_height);
 }
 
-if (document.querySelector('body').scrollHeight  < screenHeight){
-    document.querySelector('.footer').style.position = 'absolute';
-}
+
 
 
 function CheckSize() {

@@ -9,8 +9,8 @@
     <!-- <div class="h_bottom_border my-5">Концерты</div> -->
     <div class="concert_list">
         <div class="h_bottom_border my-5 ">Новости и архив концертов</div>
-        <div class="full_scroll">
-           
+        {% if concerts or performance %}
+        <div class="full_scroll">       
             <div class="scroll_menu">
                 {% for concert in performance %}
                 <a href="{% url 'concert.show' concert.id %}" class="card performance">
@@ -35,6 +35,9 @@
                 <div class="fixed-text">{{ text_list.0.text|safe }}</div>
             </div>
         </div>
+        {% else %}
+        <h4>Скоро тут будут концерты!</h4>
+        {% endif %}
     </div>
     <div class="razd"></div>
     <div class="row first-concert">
