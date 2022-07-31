@@ -225,8 +225,22 @@
     @media only screen and (max-width: 768px) {
         .concert_img_grid {
             img {
-                width: 120%;
+                width: 100%;
+               
             }
+            .justify-content-end{
+                justify-content: center !important;
+                .p-5{
+                    padding: 10px !important;
+                }
+            }
+        }
+
+        .index_concert_border_text{
+            p{
+                margin: 0;
+            }
+          
         }
 
         .concert_img_grid .row {

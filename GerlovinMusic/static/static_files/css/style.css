@@ -345,7 +345,16 @@ input[type=range]::-webkit-slider-thumb {
 }
 @media only screen and (max-width: 768px) {
   .index_concert_block .concert_img_grid img {
-    width: 120%;
+    width: 100%;
+  }
+  .index_concert_block .concert_img_grid .justify-content-end {
+    justify-content: center !important;
+  }
+  .index_concert_block .concert_img_grid .justify-content-end .p-5 {
+    padding: 10px !important;
+  }
+  .index_concert_block .index_concert_border_text p {
+    margin: 0;
   }
   .index_concert_block .concert_img_grid .row {
     margin: 10px !important;
