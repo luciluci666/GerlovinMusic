@@ -8,14 +8,16 @@
 .press_release {
 
 
-    .block{
+    .block {
         min-height: 400px;
+        justify-content: center;
     }
+
     .main {
         height: 400px;
         position: relative;
-        
-        .bold{
+
+        .bold {
             position: relative;
             top: 30px;
         }
@@ -175,26 +177,29 @@
                     top: 0;
                     left: -5px;
                 }
-                .border_bottom{
+
+                .border_bottom {
                     border-bottom: 1px solid black;
                     width: 80px;
                     position: absolute;
                     bottom: 0;
                     right: -5px;
                 }
-                .border_right{
+
+                .border_right {
                     border-right: 1px solid black;
                     height: 80px;
                     position: absolute;
                     bottom: -5px;
                     right: 0;
-                    
+
                 }
-                .border_left{
+
+                .border_left {
                     border-left: 1px solid black;
                     height: 80px;
                     position: absolute;
-                    
+
                     top: -5px;
                     left: 0;
                 }
@@ -205,187 +210,270 @@
     }
 
     @media only screen and (max-width: 1400px) {
-        .main{
-            .bold{
+        .main {
+            .bold {
                 top: 5px;
             }
         }
 
-        .simple-text{
+        .simple-text {
             position: relative;
             bottom: -10px;
             left: 10px;
         }
 
-        .our_history{
-            .white_bg_border{
+        .our_history {
+            .white_bg_border {
                 position: static;
             }
         }
 
-        .our_team{
-            img{
-                bottom: 100px;
+        .our_team {
+            img {
+                bottom: 33px !important
             }
 
-            .sq-1{
-                top:20%;
+            .sq-1 {
+                top: 20%;
                 height: 50%;
             }
-            .sq-2{
-                top:25%;
+
+            .sq-2 {
+                top: 25%;
                 height: 50%;
             }
         }
-        
+
     }
 
     @media only screen and (max-width: 1200px) {
-        .our_team{
-            img{
+        .our_team {
+            img {
                 position: relative;
-                bottom: 0;
-                left: 70%;
+                bottom: 0 !important;
+                left: 30%;
             }
 
-            .sq-1{
+            .sq-1 {
                 top: 15%;
                 left: 30%;
             }
-            .sq-2{
+
+            .sq-2 {
                 top: 28%;
             }
         }
 
-        .bg_wt{
-           height: 80% !important;
+        .bg_wt {
+            height: 80% !important;
         }
-        
+
     }
 
     @media only screen and (max-width: 992px) {
-        .main{
+        .main {
             height: inherit;
             display: flex;
             flex-direction: column-reverse;
             flex-wrap: inherit;
             position: relative;
-
+            --bs-gutter-x: 0 !important;
             width: 100%;
-            .white_border{
+
+            .white_border {
                 margin-top: 15px;
                 position: relative;
                 width: 100%;
                 padding: 10px;
             }
-            .bold{
+
+            .bold {
                 text-align: center;
             }
 
             .col-lg-4 {
                 padding: 0 20px;
             }
-            
-            .col-lg-8{
-                padding: 0  30px 30px 30px;
+
+            .col-lg-8 {
+                padding: 0 30px 30px 30px;
             }
-     
+
         }
-        .simple-text{
+
+        .simple-text {
             bottom: -20px;
             left: 55px;
-         }
+        }
 
-         .our_team{
-            img{
+        .our_team {
+            img {
+                display: block;
+                position: static;
                 margin-top: 20px;
                 left: 30%;
-                width: 70%;
+                width: 80%;
+                margin: 0 auto;
             }
 
-            .sq-1{
+            .sq-1 {
                 top: 0;
                 left: 25%;
                 height: 75%;
             }
-            .sq-2{
+
+            .sq-2 {
                 top: 10%;
                 height: 75%;
             }
-         }
+        }
 
-        .our_mission{
+        .our_mission {
             position: relative;
-            .inv_img{
+
+            .inv_img {
                 display: none;
             }
 
-            .fxxl{
+            .fxxl {
                 position: absolute;
                 right: -30px;
                 top: 0;
                 height: 100%;
             }
 
-         
+            .bg_wt{
+                left: -50% !important;
+            }
+
+
+        }
+
+        .our_history{
+            .simple-text{
+            left: 0;
+            text-align: center;
+            }
+        }
+
+        .white_bg_border{
+            width: 100% !important;
         }
     }
 
     @media only screen and (max-width: 768px) {
-        .history_imgs{
-            div{
-                margin: 15px 0 ;
+        .history_imgs {
+            div {
+                padding: 10px;
             }
+            --bs-gutter-x: 0 !important;
         }
-        .white_bg_border{
+
+        .white_bg_border {
             width: 100%;
-            padding: 35px;
+            padding: 25px 35px;
+            p{
+                margin: 0 !important;
+            }
+            
+        }
+        .our_history{
+            .row{
+                --bs-gutter-x: 0 !important;
+            }
+
+            .simple-text{
+                position: static;
+                padding: 30px;
+                width: 100%;
+            }
+
+
+           
+        }
+        .outside_margin{
+            padding: 0 15px;
+        }
+        .our_team {
+            .zone{
+                --bs-gutter-x: 0rem;
+            }
+            .col-12{
+                padding: 15px;
+            }
+                img{
+                    width: 100% !important;
+                    position: static;
+                    display: block;
+                    margin: 0 auto;
+                }
+
+           
         }
 
-        .our_team{
+        .team-title{
+            margin: 0 !important;
+            padding: 30px 0 0 0 !important;
+
+        }
+
+        .our_mission {
+            flex-direction: column-reverse;
+            .bg_wt{
+                position: static !important;
+                padding: 30px !important;
+                p{
+                    margin: 10px !important;
+                }
+            }
+
+            .text{
+                padding: 20px;
+            }
+            img{
+                border-radius: 15px 100px;
+                
+            }
+
+            .our-mission-static-img{
+                padding: 15px 40px;
+            }
           
+        }
 
-            .sq-1{
-                top: 0;
-                left: 25%;
-                height: 75%;
-                width: 65%;
-            }
-            .sq-2{
-                top: 10%;
-                height: 75%;
-                width: 70%;
-            }
-         }
-      .our_mission{
-        .text{
-            left: 30%;
-         }
-         .bg_wt{
-           height: 300px !important;
-           padding: 20px !important;
-         }
-         .tac{
-            text-align: left;
-         }
+        .fxxl {
+            position: static !important;
+            writing-mode: initial !important;
+            transform: rotate(0deg) !important;
+            padding: 0 0 15px 0 !important;
+            text-align: center
+        }
 
-         .inside_text{
-            height: 80%;
-         }
-        margin-bottom: 100px;
-      }
+        .sq-1, .sq-2{
+            display: none;
+        }
+
+        .press-razd-1{
+            margin-bottom: 25px !important;
+        }
+
+        .press-razd-2{
+            margin: 0 auto 25px !important;
+        }
+
+        .press-razd-3{
+            margin: 28px auto !important;
+        }
     }
 
     @media only screen and (max-width: 576px) {
-        .our_mission{
-   
-             .tac{
-                text-align: left;
-                right: 20px;
-             }
-    
-       
-          }
+      
+
+        .white_border {
+            width: calc(100% + 64px) !important;
+            position: relative;
+            left: -32px;
+            padding: 30px !important;
+        }
     }
 }
-

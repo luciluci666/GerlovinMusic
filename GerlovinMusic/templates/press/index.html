@@ -7,7 +7,7 @@
 
 {% include 'components/text_background.html' %}
 
-<div class="container py-5 press_release">
+<div class="container  py-5 press_release container-height">
     <div class="h_bottom_border my-5 ">О группе</div>
     <div class="row my-3 main block">
         <div class="col-lg-4 ">
@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="row justify-content-around white_shadow_bg">
+    <!-- <div class="row justify-content-around white_shadow_bg">
         <div class="col-3 ">
             <div class="col-12 bold fxl tac">20 лет</div>
             <div class="col-12 tac">В музыкальной индрустрии</div>
@@ -34,41 +34,41 @@
             <div class="col-12 bold fxl tac">9 наград</div>
             <div class="col-12 tac">Получено в ходе выступлений</div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="razd"></div>
+    <div class="razd press-razd-1"></div>
 
     <div class="row our_history block">
-        <div class="col-1 tac fxxl p-5" style="writing-mode:vertical-lr; transform: rotate(-180deg);">Наша история</div>
-        <div class="col-md-6 col-4 row history_imgs">
-            <div class="col-md-7 col-12"><img class="w-100" src="{% static '\img\artist\IMG_2331.JPG' %}" alt=""></div>
-            <div class="col-md-5 col-12"><img class="w-100" src="{% static '\img\artist\IMG_1875.JPG' %}" alt=""></div>
+        <div class="col-12 col-md-1  tac fxxl p-5" style="writing-mode:vertical-lr; transform: rotate(-180deg);">Наша история</div>
+        <div class="col-md-6 col-12 row history_imgs">
+            <div class="col-md-7 col-6"><img class="w-100" src="{% static '\img\artist\IMG_2331.JPG' %}" alt=""></div>
+            <div class="col-md-5 col-6"><img class="w-100" src="{% static '\img\artist\IMG_1875.JPG' %}" alt=""></div>
         </div>
-        <div class="col-5 row simple_text_zone" style="position: relative;">
-            <div class="white_bg_border bold">{{ text_list.1.text|safe }}</div>
+        <div class="col-md-5 col-12 row simple_text_zone" style="position: relative;">
+            <div class="outside_margin">
+                <div class="white_bg_border bold">{{ text_list.1.text|safe }}</div>
+            </div>
             <div class="simple-text col-lg-12">{{ text_list.2.text|safe }}</div>
         </div>
     </div>
 
-    <div class="razd"></div>
-
+    <div class="razd press-razd-2"></div>
+    <div class="fxxl mb-4 team-title">Наша команда</div>
     <div class="row our_team block">
         <div class="col-xl-5 col-12 p-4 ">
-            <div class="fxxl mb-3">Наша команда</div>
+            
             <div class="white_bg_border">{{ text_list.3.text|safe }}</div>
         </div>
         <div class="col-xl-7 col-12 zone row">
-            <div class="sq-2 col-6"></div>
-            <div class="sq-1 col-lg-4 col-md-7"></div>
-            <div class="col-lg-8"><img src="{% static '\img\artist\IMG_1928.JPG' %}" alt=""></div>
+            <div class="col-12 col-lg-10"><img src="{% static '\img\artist\IMG_1928.JPG' %}" alt=""></div>
         </div>
     </div>
 
-    <div class="razd"></div>
+    <div class="razd press-razd-3"></div>
 
     <div class="row our_mission block">
-        <div class="col-md-5 col-7"><img class="w-100" src="{% static '\img\artist\IMG_1657.JPG' %}" alt=""></div>
-        <div class="col-lg-3 col-md-5 col-7 text">
+        <div class="our-mission-static-img col-md-5 col-12"><img class="w-100" src="{% static '\img\artist\IMG_1657.JPG' %}" alt=""></div>
+        <div class="col-lg-3 col-md-5 col-12 text">
             <div class="bg_wt">
                    
                     <div class="inside_text">
@@ -83,7 +83,7 @@
         
         </div>
         <div class="col-lg-3"><img class="w-100 inv_img" src="{% static '\img\artist\IMG_1684.JPG' %}" alt=""></div>
-        <div class="col-1 tac fxxl" style="writing-mode: vertical-rl;">Наша цель</div>
+        <div class="col-md-1 col-12 tac fxxl" style="writing-mode: vertical-rl;">Наша цель</div>
     </div>
 </div>
 
