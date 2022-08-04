@@ -155,9 +155,14 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .razd {
-  border-top: 1px solid #6F787D;
+  border-top: 1px solid #000000;
   max-width: 350px;
   margin: 50px auto;
+}
+@media only screen and (max-width: 576px) {
+  .razd {
+    max-width: 300px !important;
+  }
 }
 
 .index_header .col-12 {
@@ -946,6 +951,7 @@ input[type=range]::-webkit-slider-thumb {
 
 .press_release .block {
   min-height: 400px;
+  justify-content: center;
 }
 .press_release .main {
   height: 400px;
@@ -1109,7 +1115,7 @@ input[type=range]::-webkit-slider-thumb {
     position: static;
   }
   .press_release .our_team img {
-    bottom: 100px;
+    bottom: 33px !important;
   }
   .press_release .our_team .sq-1 {
     top: 20%;
@@ -1123,8 +1129,8 @@ input[type=range]::-webkit-slider-thumb {
 @media only screen and (max-width: 1200px) {
   .press_release .our_team img {
     position: relative;
-    bottom: 0;
-    left: 70%;
+    bottom: 0 !important;
+    left: 30%;
   }
   .press_release .our_team .sq-1 {
     top: 15%;
@@ -1144,6 +1150,7 @@ input[type=range]::-webkit-slider-thumb {
     flex-direction: column-reverse;
     flex-wrap: inherit;
     position: relative;
+    --bs-gutter-x: 0 !important;
     width: 100%;
   }
   .press_release .main .white_border {
@@ -1166,9 +1173,12 @@ input[type=range]::-webkit-slider-thumb {
     left: 55px;
   }
   .press_release .our_team img {
+    display: block;
+    position: static;
     margin-top: 20px;
     left: 30%;
-    width: 70%;
+    width: 80%;
+    margin: 0 auto;
   }
   .press_release .our_team .sq-1 {
     top: 0;
@@ -1191,47 +1201,103 @@ input[type=range]::-webkit-slider-thumb {
     top: 0;
     height: 100%;
   }
+  .press_release .our_mission .bg_wt {
+    left: -50% !important;
+  }
+  .press_release .our_history .simple-text {
+    left: 0;
+    text-align: center;
+  }
+  .press_release .white_bg_border {
+    width: 100% !important;
+  }
 }
 @media only screen and (max-width: 768px) {
+  .press_release .history_imgs {
+    --bs-gutter-x: 0 !important;
+  }
   .press_release .history_imgs div {
-    margin: 15px 0;
+    padding: 10px;
   }
   .press_release .white_bg_border {
     width: 100%;
-    padding: 35px;
+    padding: 25px 35px;
   }
-  .press_release .our_team .sq-1 {
-    top: 0;
-    left: 25%;
-    height: 75%;
-    width: 65%;
+  .press_release .white_bg_border p {
+    margin: 0 !important;
   }
-  .press_release .our_team .sq-2 {
-    top: 10%;
-    height: 75%;
-    width: 70%;
+  .press_release .our_history .row {
+    --bs-gutter-x: 0 !important;
+  }
+  .press_release .our_history .simple-text {
+    position: static;
+    padding: 30px;
+    width: 100%;
+  }
+  .press_release .outside_margin {
+    padding: 0 15px;
+  }
+  .press_release .our_team .zone {
+    --bs-gutter-x: 0rem;
+  }
+  .press_release .our_team .col-12 {
+    padding: 15px;
+  }
+  .press_release .our_team img {
+    width: 100% !important;
+    position: static;
+    display: block;
+    margin: 0 auto;
+  }
+  .press_release .team-title {
+    margin: 0 !important;
+    padding: 30px 0 0 0 !important;
   }
   .press_release .our_mission {
-    margin-bottom: 100px;
-  }
-  .press_release .our_mission .text {
-    left: 30%;
+    flex-direction: column-reverse;
   }
   .press_release .our_mission .bg_wt {
-    height: 300px !important;
-    padding: 20px !important;
+    position: static !important;
+    padding: 30px !important;
   }
-  .press_release .our_mission .tac {
-    text-align: left;
+  .press_release .our_mission .bg_wt p {
+    margin: 10px !important;
   }
-  .press_release .our_mission .inside_text {
-    height: 80%;
+  .press_release .our_mission .text {
+    padding: 20px;
+  }
+  .press_release .our_mission img {
+    border-radius: 15px 100px;
+  }
+  .press_release .our_mission .our-mission-static-img {
+    padding: 15px 40px;
+  }
+  .press_release .fxxl {
+    position: static !important;
+    writing-mode: initial !important;
+    transform: rotate(0deg) !important;
+    padding: 0 0 15px 0 !important;
+    text-align: center;
+  }
+  .press_release .sq-1, .press_release .sq-2 {
+    display: none;
+  }
+  .press_release .press-razd-1 {
+    margin-bottom: 25px !important;
+  }
+  .press_release .press-razd-2 {
+    margin: 0 auto 25px !important;
+  }
+  .press_release .press-razd-3 {
+    margin: 28px auto !important;
   }
 }
 @media only screen and (max-width: 576px) {
-  .press_release .our_mission .tac {
-    text-align: left;
-    right: 20px;
+  .press_release .white_border {
+    width: calc(100% + 64px) !important;
+    position: relative;
+    left: -32px;
+    padding: 30px !important;
   }
 }
 
