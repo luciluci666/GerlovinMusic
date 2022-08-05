@@ -34,6 +34,7 @@ class index(MyPage):
            
         except:
             concert = "No concerts"
+            concert_status = ""
      
     
         text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
