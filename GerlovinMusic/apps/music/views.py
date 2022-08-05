@@ -27,19 +27,19 @@ class index(MyPage):
 
         try:
             concert = Concert.objects.latest('date_time')
-            text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
+            if datetime.datetime.timestamp(concert.date_time) > datetime.datetime.timestamp(datetime.datetime.now()):
+                concert_status = "ожидается"
+            else:
+                concert_status = "проведен"   
+           
+        except:
+            concert = "No concerts"
+     
+    
+        text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
             Text.objects.get(name = "Песни"),
             Text.objects.get(name = "Фотографии с концертов"),
         ]
-        except:
-            concert = "No concerts"
-            concert_status = ""
-        if datetime.datetime.timestamp(concert.date_time) > datetime.datetime.timestamp(datetime.datetime.now()):
-                concert_status = "ожидается"
-        else:
-            concert_status = "проведен"    
-    
-      
 
         return render(request, "index/index.html", {'form' : form, 'songs' : random_sogns, 'text_list' : text_list, 'concert' : concert, 'concert_status' : concert_status})
       
