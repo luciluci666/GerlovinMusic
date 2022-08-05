@@ -1,3 +1,4 @@
+from time import strptime
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.core.mail import send_mail
@@ -24,12 +25,22 @@ class index(MyPage):
         except:
             random_sogns = "songs_error"
 
+        try:
+            concert = Concert.objects.latest('date_time')
+           
+        except:
+            concert = "No concerts"
+        if datetime.datetime.timestamp(concert.date_time) > datetime.datetime.timestamp(datetime.datetime.now()):
+                concert_status = "ожидается"
+        else:
+            concert_status = "проведен"    
+    
         text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
             Text.objects.get(name = "Песни"),
             Text.objects.get(name = "Фотографии с концертов"),
         ]
 
-        return render(request, "index/index.html", {'form' : form, 'songs' : random_sogns, 'text_list' : text_list})
+        return render(request, "index/index.html", {'form' : form, 'songs' : random_sogns, 'text_list' : text_list, 'concert' : concert, 'concert_status' : concert_status})
       
     
 
