@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load music_tags %}
 
 {% block title %} GerlovinMusic {% endblock %}
 
@@ -66,32 +67,35 @@
         </div>
     </div>
 
+    {% if concert != "No concerts" %}
     <div class="razd"></div>
     <div class="h_bottom_border" style="margin-bottom: 30px;">Концерты</div>
     <div class="px-5">
-        <div style="font-size: 23px; font-weight: 550;">concert in tel-aviv</div>
-        <div>rotshil street, 35/2</div>
+        <div style="font-size: 23px; font-weight: 550; text-transform: lowercase;">{{ concert.name }}</div>
+        <div style="text-transform: lowercase;">{{ concert.place }}</div>
         <div class="index_concert_release_block row justify-content-around py-3">
             <div class="col-lg-9 col-7">
-                <iframe width="80%" height="340" src="https://www.youtube.com/embed/8inQXjgmJuE"
+                <iframe width="80%" height="340" src="https://www.youtube.com/embed/{{ concert.video }}"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
             <div class="col-lg-3 col-5">
                 <div class="index_concert_releaze">
-                    <p>концерт в..............</p>
-                    <p>дата: 30.07.2020</p>
+                    <p>{{ concert_status }}</p>
+                    <p>дата: {{ concert.date_time }}</p>
                     <p>Песни: </p>
-                    <p>1. Название песни</p>
-                    <p>2. Название песни</p>
-                    <p>3. Название песни</p>
-                    <p>4. Название песни</p>
-                    <p>5. Название песни</p>
+                    {% get_concert_songs concert=concert as concert_songs %}
+                    <ol>
+                    {% for song in concert_songs %}
+                        <li>{{ song.name }}</li>
+                    {% endfor %}
+                    </ol>
                 </div>
             </div>
         </div>
     </div>
+    {% endif %}
 
 </div>
 

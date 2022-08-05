@@ -23,7 +23,7 @@ admin.site.register(Verse, VerseAdmin)
 
 
 class ConcertAdmin(admin.ModelAdmin):
-    list_display = ("name", "pub_date")
+    list_display = ("name", "date_time", "pub_date")
     
 admin.site.register(Concert, ConcertAdmin)
 

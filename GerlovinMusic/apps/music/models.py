@@ -57,6 +57,7 @@ class Verse(models.Model):
 
 class Concert(models.Model):
     name = models.CharField('Название', max_length=100, null=True, blank=True)
+    place = models.CharField('Место проводения', max_length=500, null=True, blank=True)
     desc = HTMLField('Описание', null=True, blank=True)
     image_file = models.ImageField(
         'Загрузить постер', blank=True, null=True, upload_to='PlaylistPosters')
