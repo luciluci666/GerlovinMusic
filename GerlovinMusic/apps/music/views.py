@@ -27,13 +27,14 @@ class index(MyPage):
 
         try:
             concert = Concert.objects.latest('date_time')
+            if datetime.datetime.timestamp(concert.date_time) > datetime.datetime.timestamp(datetime.datetime.now()):
+                concert_status = "ожидается"
+            else:
+                concert_status = "проведен"   
            
         except:
             concert = "No concerts"
-        if datetime.datetime.timestamp(concert.date_time) > datetime.datetime.timestamp(datetime.datetime.now()):
-                concert_status = "ожидается"
-        else:
-            concert_status = "проведен"    
+     
     
         text_list = [Text.objects.get(name = "Главный (ИНДЕКС)"),
             Text.objects.get(name = "Песни"),
