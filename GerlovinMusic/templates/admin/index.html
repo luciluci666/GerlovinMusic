@@ -31,31 +31,35 @@
 {% block content %}
 
 <style>
-    #docs_btn{
+    #report_btn{
         width: 100% !important;
         margin: 0;
         color: #309bbf;
         transition: all .1s linear;
     }   
     
-    #documentation{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 400px;
-        height: 600px;
-        background-color: white;
-        z-index: 5;
+    #tooltip{
+        position: absolute;
+        bottom: -35px;
+        left: 60%;
+
+
+        width: 100px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        padding: 7px;
+        text-align: center;
+        background-color: rgba(95, 95, 95, 0.438);
+        color: rgb(0, 0, 0);
+
+        display: none;
     }
+
+    .show{
+        display: block !important;
+    }
+    
 </style>
-
-<script>
-    docs_btn.onClick = function(){
-
-    }
-</script>
-
-    <div id="documentatiom"></div>
 
     <div class="g-d-c">
         <div class="g-d-12 g-d-f">
@@ -95,8 +99,11 @@
                     </div>
                 {% endif %}
             {% endblock %}
-                <div class="grp-module"><button id='docs_btn'>Документация</button></div>
-        </div>
+      
+                <div class="grp-module">
+                     <span class="displayText" id="tooltip"></span>
+                     <button id='report_btn'>Сообщить об ошибке</button></div>
+                </div>
         <div class="g-d-6 g-d-l">
             <div class="grp-module" id="grp-recent-actions-module">
                 <h2>{% trans 'Recent actions' %}</h2>
@@ -123,4 +130,49 @@
             </div>
         </div>
     </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    let click_counter = 0;  
+    let visible_status = false;
+
+    function toolTipRemove(){
+        tooltip.classList.remove("show");
+        visible_status = false;
+    }
+
+    function toolTip(text=""){
+        if(visible_status == false){
+            tooltip.innerText = text;
+            tooltip.classList.add("show");
+            visible_status = true;
+            setTimeout(toolTipRemove, 2000)
+        }
+    }
+    
+    report_btn.onclick = ()=>{
+        if (click_counter == 0){
+            report_btn.innerText = "gerl.adm@mail.ru"
+        }
+        else if (click_counter == 1) {
+            var $tmp = $("<textarea>");
+            $("body").append($tmp);
+            $tmp.val($(report_btn).text()).select();
+            document.execCommand("copy");
+            $tmp.remove();
+            toolTip("Скопировано");
+            
+        }
+        else {
+            toolTip("Уже скопировано");
+        }
+        click_counter += 1;
+    }
+</script>
+
 {% endblock %}
+
+
+
