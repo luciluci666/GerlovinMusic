@@ -6,7 +6,7 @@ import json
 import os
 
 from .forms import *
-from GerlovinMusic.settings import MEDIA_ROOT, STATIC_ROOT
+from GerlovinMusic.settings import STATIC_ROOT, SERVER_IP
 
 
 class MyPage(View):
@@ -21,7 +21,10 @@ class MyPage(View):
             })
         json_object = json.dumps(song_dict, indent = 4, ensure_ascii=False)
 
-        path = os.path.join(STATIC_ROOT, "static_files", "js", "json", "songs.json")
+        if SERVER_IP == '127.0.0.1':
+            path = os.path.join(STATIC_ROOT, "js", "json", "songs.json")
+        else:
+            path = os.path.join(STATIC_ROOT, "static_files", "js", "json", "songs.json")
         with open(path , "w", encoding="utf-8") as outfile:
             outfile.write(json_object)
 
