@@ -51,6 +51,8 @@ class music(MyPage):
         MyPage.songs_json(Music)
         songs = Music.objects.all().order_by("-id")
         playlists = Playlist.objects.all().order_by("-id")
+        if playlists.__len__() < 1 :
+            playlists = "No playlists"
 
         pl_buttons = []
         i = 0
@@ -65,7 +67,10 @@ class music(MyPage):
 
     def show(request, id):
         song = Music.objects.get(pk = id)
-        playlist = Playlist.objects.filter(songs = id)[:1][0]
+        try:
+            playlist = Playlist.objects.filter(songs = id)[:1][0]
+        except:
+            playlist = ""
 
 
         return render(request, "music/show.html", {'form' : form, 'song' : song, 'playlist' : playlist})
