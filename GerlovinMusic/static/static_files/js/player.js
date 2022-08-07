@@ -299,13 +299,21 @@ function song_opener(elem) {
 		pausesong();
 	}
 	else {
-		index_no = Number(elem.getAttribute("name").replace("song_", "")) - 1;
+		index_no = Number(realId(elem.getAttribute("name").replace("song_", ""))) - 1;
 		if (player_opened == false) {
 			player_open();
 		}
 		load_track(index_no);
 		playsong();
 	}
+}
+
+function realId(id){
+	song = All_song.filter(function(el){
+		return el.id === id;
+	})
+	index = song[0].index;
+	return index
 }
 
 

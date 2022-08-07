@@ -13,14 +13,16 @@ class MyPage(View):
     def songs_json(music):    
         song_dict=[]
         all_songs = music.objects.all()
-        
+        index = 1
+
         for song in all_songs:
             print(song.audio_file)
             song_dict.append({
-                "id" : str(song.id), "name" : song.name, "path" : str(song.audio_file), "poster" : str(song.image_file)
+                "id" : str(song.id), "index" : str(index), "name" : song.name, "path" : str(song.audio_file), "poster" : str(song.image_file)
             })
+            index += 1
         json_object = json.dumps(song_dict, indent = 4, ensure_ascii=False)
-
+        
         if SERVER_IP == '127.0.0.1':
             path = os.path.join(STATIC_ROOT, "js", "json", "songs.json")
         else:
