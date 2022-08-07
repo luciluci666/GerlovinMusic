@@ -34,6 +34,22 @@ let All_song = JSON.parse(localStorage.getItem('json'));
 
 let sliders = document.getElementsByClassName('duration_slider_page');
 
+function realId(choise, i){
+	if(choise == "id")
+		{song = All_song.filter(function(el){
+			return el.id === i;
+		})
+		index = song[0].index;
+		return index}
+	else{
+		{song = All_song.filter(function(el){
+			return el.index === String(i);
+		})
+
+		id = song[0].id;
+		return id}
+	}
+}
 
 
 function click_listner() {
@@ -163,9 +179,11 @@ function playsong() {
 	Playing_song = true;
 	play_img.src = String(play_img.src).replace("play", "pause");
 	check_playing_img_song();
-	now_playing = "song_" + (index_no + 1);
-	slider_now_playing = "slider_song_" + (index_no + 1);
-	volume_now_playing = "volume_song_" + (index_no + 1);
+
+	id = realId("index", index_no + 1)
+	now_playing = "song_" + (id);
+	slider_now_playing = "slider_song_" + (id);
+	volume_now_playing = "volume_song_" + (id);
 	now_playing = document.querySelectorAll('img[name=' + now_playing + ']');
 
 	playing_song_slider = document.querySelector('input[name=' + slider_now_playing + ']');
@@ -197,7 +215,7 @@ function pausesong() {
 	check_playing_img_song();
 }
 
-function next_song() {
+function previous_song() {
 	if (index_no < All_song.length - 1) {
 		index_no += 1;
 		load_track(index_no);
@@ -210,7 +228,7 @@ function next_song() {
 	}
 }
 
-function previous_song() {
+function next_song() {
 	if (index_no > 0) {
 		index_no -= 1;
 		load_track(index_no);
@@ -299,7 +317,7 @@ function song_opener(elem) {
 		pausesong();
 	}
 	else {
-		index_no = Number(realId(elem.getAttribute("name").replace("song_", ""))) - 1;
+		index_no = Number(realId("id", elem.getAttribute("name").replace("song_", ""))) - 1;
 		if (player_opened == false) {
 			player_open();
 		}
@@ -308,13 +326,6 @@ function song_opener(elem) {
 	}
 }
 
-function realId(id){
-	song = All_song.filter(function(el){
-		return el.id === id;
-	})
-	index = song[0].index;
-	return index
-}
 
 
 player_open();
