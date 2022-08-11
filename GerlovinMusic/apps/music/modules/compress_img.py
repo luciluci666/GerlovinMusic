@@ -23,7 +23,8 @@ class Compress():
                 img = Image.open(path)
                 if img.height > 300 or img.width > 300:
                     img.save(path, format="JPEG", quality=quality)
+                    print(path + " - compressed!")
         
 
 
-Compress().folder_imgs_compress("GerlovinMusic\static\static_files\img/artist", 50)
+Compress().folder_imgs_compress("GerlovinMusic/static/img/artist", 50)
