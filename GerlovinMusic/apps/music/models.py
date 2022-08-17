@@ -2,7 +2,7 @@ from tabnanny import verbose
 from django.db import models
 
 from tinymce.models import HTMLField
-
+from .modules.compress_img import Compress
 
 class Music(models.Model):
     name = models.CharField(
@@ -22,6 +22,10 @@ class Music(models.Model):
         verbose_name = "Песня"
         verbose_name_plural = "Песни"
 
+    def save(self):
+        super().save()
+        Compress().compress_img(self.image_file, 20)
+
 
 
 class Playlist(models.Model):
@@ -39,6 +43,10 @@ class Playlist(models.Model):
     class Meta:
         verbose_name = "Плэйлист"
         verbose_name_plural = "Плэйлисты"
+
+    def save(self):
+        super().save()
+        Compress().compress_img(self.image_file, 20)
 
 
 class Verse(models.Model):
@@ -74,6 +82,10 @@ class Concert(models.Model):
     class Meta:
         verbose_name = "Концерт"
         verbose_name_plural = "Концерты"
+
+    def save(self):
+        super().save()
+        Compress().compress_img(self.image_file, 20)
 
 
 class Text(models.Model):

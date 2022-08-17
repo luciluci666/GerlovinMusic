@@ -19,12 +19,12 @@ class Compress():
 
         #print all the file names
         for path in filelist:
-            if not "png" in path:
+            if not "png" or not "svg" in path :
                 img = Image.open(path)
                 if img.height > 300 or img.width > 300:
                     img.save(path, format="JPEG", quality=quality)
                     print(path + " - compressed!")
         
 
-
-Compress().folder_imgs_compress("GerlovinMusic/static/img/artist", 50)
+if __name__ == "__main__":
+    Compress().folder_imgs_compress("GerlovinMusic\static\static_files\img", 20)
